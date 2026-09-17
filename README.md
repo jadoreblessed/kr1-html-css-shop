@@ -30,3 +30,7 @@
 
 Создана базовая структура проекта.
 
+## Ссылка на опубликованный проект
+
+GitHub Pages: https://jadoreblessed.github.io/kr1-html-css-shop/
+
