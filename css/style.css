@@ -3,18 +3,24 @@
    =============================== */
 
 :root {
-  /* Основные цвета проекта */
+  /* Цвета */
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-muted: #666666;
+
   --color-primary: #0057b8;
   --color-primary-dark: #003f86;
+
   --color-border: #dddddd;
+
   --color-surface: #f7f7f7;
   --color-surface-accent: #eef5ff;
+
   --color-danger: #b00020;
+
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
+
   --color-white: #ffffff;
 
   /* Отступы */
@@ -38,115 +44,81 @@
    2. Базовые стили
    =============================== */
 
-/*
-  border-box делает расчёт размеров элементов
-  более понятным: width включает content,
-  padding и border.
-*/
 * {
   box-sizing: border-box;
 }
 
-/*
-  Основные настройки страницы.
-*/
 body {
   margin: 0;
+
   font-family: Arial, sans-serif;
   line-height: 1.5;
+
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
-/*
-  Общие отступы основных областей страницы.
-*/
-header,
 main,
 footer {
   padding: var(--space-lg);
 }
 
-/*
-  Фон шапки страницы.
-*/
-header {
-  background-color: var(--color-surface);
-}
-
-/*
-  Фон подвала страницы.
-*/
 footer {
   background-color: var(--color-surface);
 }
 
 
 /* ===============================
-   3. Общие элементы интерфейса
+   3. Общие элементы
    =============================== */
 
-/*
-  Базовый стиль ссылок.
-*/
 a {
   color: var(--color-primary);
 }
 
-/*
-  Состояние ссылки при наведении.
-*/
 a:hover {
   color: var(--color-primary-dark);
 }
 
-/*
-  Видимый фокус ссылки
-  при навигации с клавиатуры.
-*/
 a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-/*
-  Общий стиль кнопки.
-*/
+
+/* Кнопка */
+
 .button {
   display: inline-block;
+
   padding: var(--space-sm) var(--space-md);
 
   color: var(--color-white);
   background-color: var(--color-primary);
 
-  text-decoration: none;
-
   border: none;
   border-radius: var(--radius-sm);
+
+  font: inherit;
+  text-decoration: none;
 
   cursor: pointer;
 }
 
-/*
-  Состояние кнопки при наведении.
-*/
 .button:hover {
   color: var(--color-white);
   background-color: var(--color-primary-dark);
 }
 
-/*
-  Видимый фокус кнопки
-  при навигации клавишей Tab.
-*/
+.button:active {
+  transform: scale(0.98);
+}
+
 .button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-/*
-  Состояние отключённой кнопки.
-*/
 .button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -154,93 +126,128 @@ a:focus-visible {
 
 
 /* ===============================
-   4. Компоненты страницы
+   4. Шапка
    =============================== */
 
-/*
-  Ограничиваем ширину содержимого шапки,
-  чтобы оно не растягивалось на широком экране.
-*/
 .site-header {
+  padding: var(--space-lg);
+
+  background-color: var(--color-surface);
+}
+
+.site-header__inner {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
   max-width: var(--container-width);
+
   margin: 0 auto;
 }
 
-/*
-  Текстовый логотип сайта.
-*/
-.site-logo {
-  font-weight: bold;
-  text-decoration: none;
+.site-header__logo {
   color: var(--color-text);
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-decoration: none;
 }
 
-/*
-  Список навигации.
-*/
+
+/* ===============================
+   5. Навигация
+   =============================== */
+
 .site-nav__list {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-lg);
+
+  margin: 0;
   padding: 0;
-  margin: var(--space-md) 0 0;
+
   list-style: none;
 }
 
-/*
-  Отступ между пунктами навигации.
-*/
-.site-nav__list li {
-  margin-bottom: var(--space-sm);
+.site-nav__item {
+  margin: 0;
 }
 
-/*
-  Ссылки навигации.
-*/
-.site-nav__list a {
+.site-nav__link {
   color: var(--color-primary);
+
   text-decoration: none;
 }
 
-/*
-  Наведение на ссылку меню.
-*/
-.site-nav__list a:hover {
+.site-nav__link:hover {
   color: var(--color-primary-dark);
-  text-decoration: underline;
 }
 
-/*
-  Hero-блок — первый крупный блок страницы.
-*/
+.site-nav__link--active {
+  color: var(--color-primary-dark);
+
+  font-weight: bold;
+}
+
+
+/* ===============================
+   6. Hero
+   =============================== */
+
 .hero {
   max-width: var(--container-width);
+
   margin: 0 auto var(--space-xl);
 
   padding: var(--space-xl) var(--space-lg);
 
   background-color: var(--color-surface-accent);
+
   border-radius: var(--radius-lg);
 }
 
-/*
-  Общий класс разделов страницы.
-*/
+
+/* ===============================
+   7. Секции
+   =============================== */
+
 .section {
   max-width: var(--container-width);
+
   margin: 0 auto var(--space-xl);
 }
 
-/*
-  Убираем лишний верхний отступ
-  у заголовков разделов.
-*/
 .section h2 {
   margin-top: 0;
 }
 
-/*
-  Карточка товара.
-*/
+
+/* ===============================
+   8. Сетка товаров
+   =============================== */
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: var(--space-md);
+}
+
+
+/* ===============================
+   9. Карточка товара
+   =============================== */
+
 .product-card {
-  margin-bottom: var(--space-md);
+  display: flex;
+
+  flex-direction: column;
+
   padding: var(--space-md);
 
   border: 1px solid var(--color-border);
@@ -249,43 +256,65 @@ a:focus-visible {
   background-color: var(--color-bg);
 }
 
-/*
-  При наведении граница карточки
-  меняет цвет.
-*/
 .product-card:hover {
   border-color: var(--color-primary);
 }
 
-/*
-  Убираем лишний верхний отступ
-  у заголовка карточки.
-*/
-.product-card h3 {
+.product-card__title {
   margin-top: 0;
+  margin-bottom: var(--space-sm);
 }
 
+.product-card__description {
+  margin-top: 0;
+
+  color: var(--color-muted);
+}
+
+.product-card__price {
+  margin-top: auto;
+
+  font-weight: bold;
+}
+
+.product-card__button {
+  align-self: flex-start;
+
+  margin-top: var(--space-sm);
+}
+
+
 /*
-  Дополнительный информационный блок.
+  Модификатор карточки.
+
+  Показывает пример БЭМ-модификатора.
 */
+.product-card--discount {
+  background-color: var(--color-surface-accent);
+}
+
+
+/* ===============================
+   10. Дополнительный блок
+   =============================== */
+
 .aside-info {
   max-width: var(--container-width);
+
   margin: 0 auto var(--space-xl);
 
   padding: var(--space-md);
 
   border-left: 4px solid var(--color-primary);
+
   background-color: var(--color-surface);
 }
 
 
 /* ===============================
-   5. Форма и модальное окно
+   11. Модальное окно
    =============================== */
 
-/*
-  Модальное окно оформления заявки.
-*/
 .order-dialog {
   width: min(100% - 32px, 560px);
 
@@ -295,36 +324,26 @@ a:focus-visible {
   border-radius: var(--radius-lg);
 }
 
-/*
-  Затемнение страницы
-  за открытым dialog.
-*/
 .order-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/*
-  Отдельный блок поля формы.
-*/
-.form-field {
+
+/* ===============================
+   12. Форма по БЭМ
+   =============================== */
+
+.order-form__field {
   margin-bottom: var(--space-md);
 }
 
-/*
-  Подпись поля формы.
-*/
-.form-field label {
+.order-form__label {
   display: block;
+
   margin-bottom: var(--space-xs);
 }
 
-/*
-  Общие стили текстовых полей,
-  списка и textarea.
-*/
-.form-field input,
-.form-field select,
-.form-field textarea {
+.order-form__input {
   width: 100%;
 
   padding: 10px 12px;
@@ -335,18 +354,11 @@ a:focus-visible {
   font: inherit;
 }
 
-/*
-  Checkbox не должен занимать
-  всю ширину родительского блока.
-*/
-.form-field input[type="checkbox"] {
+.order-form__field input[type="checkbox"] {
   width: auto;
 }
 
-/*
-  Подсказки под полями формы.
-*/
-.form-field small {
+.order-form__field small {
   display: block;
 
   margin-top: var(--space-xs);
@@ -354,60 +366,38 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-/*
-  Изменение границы поля при наведении.
-*/
-.form-field input:hover,
-.form-field select:hover,
-.form-field textarea:hover {
+.order-form__input:hover {
   border-color: var(--color-primary);
 }
 
-/*
-  Видимый фокус полей формы
-  при навигации с клавиатуры.
-*/
-.form-field input:focus-visible,
-.form-field select:focus-visible,
-.form-field textarea:focus-visible,
-.form-actions button:focus-visible {
+.order-form__input:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-/*
-  Ошибочное поле формы.
-
-  aria-invalid="true" добавляется
-  через JavaScript после проверки формы.
-*/
-[aria-invalid="true"] {
+.order-form__input[aria-invalid="true"] {
   border-color: var(--color-danger);
 }
 
-/*
-  Контейнер для кнопок формы.
-*/
-.form-actions {
+
+/* Кнопки формы */
+
+.order-form__actions {
   display: flex;
 
   gap: var(--space-md);
+
   margin-top: var(--space-lg);
 }
 
-/*
-  Отключённая кнопка формы.
-*/
-.form-actions button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
 
-/*
-  Сообщение об успешной отправке формы.
-*/
+/* ===============================
+   13. Сообщение об успехе
+   =============================== */
+
 .success-message {
   max-width: var(--container-width);
+
   margin: var(--space-lg) auto;
 
   padding: var(--space-md);
