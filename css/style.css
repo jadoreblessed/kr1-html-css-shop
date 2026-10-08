@@ -498,3 +498,96 @@ html {
   border-radius: var(--radius-sm);
   font: inherit;
 }
+
+/* Закреплённая шапка */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Контейнер каталога */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 325px minmax(0, 1fr);
+  align-items: start;
+  gap: 30px;
+  max-width: 1400px;
+  padding: 0 24px;
+  margin: 40px auto;
+}
+
+/* Правая часть */
+.catalog-products {
+  min-width: 0;
+}
+
+.catalog-products h2 {
+  margin: 0 0 25px;
+}
+
+/* Сетка карточек */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Карточки товаров */
+.products-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  min-height: 230px;
+  padding: 22px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.products-grid .product-card__title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.products-grid .product-card__description {
+  color: #666666;
+}
+
+.products-grid .product-card__price {
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.products-grid .button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Планшеты */
+@media (max-width: 1100px) {
+  .catalog-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Телефоны */
+@media (max-width: 700px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
