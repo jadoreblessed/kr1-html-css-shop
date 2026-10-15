@@ -5,7 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
+
+  <meta
+    name="description"
+    content="Каталог товаров учебного интернет-магазина."
+  >
 
   <title>Каталог товаров — Учебный интернет-магазин</title>
 
@@ -14,7 +18,7 @@
 
 <body>
 
-  <!-- Шапка -->
+  <!-- Шапка сайта -->
   <header class="site-header">
     <div class="site-header__inner">
 
@@ -24,68 +28,150 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">
+              Главная
+            </a>
+          </li>
+
+          <li class="site-nav__item">
+            <a
+              class="site-nav__link site-nav__link--active"
+              href="catalog.html"
+              aria-current="page"
+            >
+              Каталог
+            </a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">
+              Контакты
+            </a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">
+              Преимущества
+            </a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">
+              Популярные товары
+            </a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#contacts">
+              Обратная связь
+            </a>
+          </li>
+
         </ul>
       </nav>
 
     </div>
   </header>
 
-  <main>
+  <main class="site-main">
 
     <!-- Хлебные крошки -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
+
+      <a class="breadcrumbs__link" href="index.html">
+        Главная
+      </a>
+
+      <span class="breadcrumbs__current" aria-current="page">
+        Каталог
+      </span>
+
     </nav>
 
     <!-- Описание каталога -->
     <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
+
+      <h1 class="section__title">
+        Каталог товаров
+      </h1>
+
+      <p class="section__description">
         На этой странице представлен учебный каталог товаров.
         Здесь можно просматривать товары и использовать фильтры.
       </p>
+
     </section>
 
-    <!-- Каталог -->
+    <!-- Каталог товаров -->
     <section class="catalog-layout" aria-label="Каталог товаров">
 
       <!-- Фильтры -->
       <aside class="catalog-filters">
-        <h2>Фильтры</h2>
 
-        <form class="filters-form" action="#" method="get">
+        <h2 class="catalog-filters__title">
+          Фильтры
+        </h2>
 
-          <fieldset>
-            <legend>Категория</legend>
+        <form
+          class="filters-form"
+          action="#"
+          method="get"
+        >
 
-            <label>
-              <input type="checkbox" name="category" value="all">
+          <!-- Фильтр категорий -->
+          <fieldset class="filters-form__group">
+
+            <legend class="filters-form__legend">
+              Категория
+            </legend>
+
+            <label class="filters-form__label">
+              <input
+                class="filters-form__checkbox"
+                type="checkbox"
+                name="category"
+                value="all"
+              >
               Все товары
             </label>
 
-            <label>
-              <input type="checkbox" name="category" value="popular">
+            <label class="filters-form__label">
+              <input
+                class="filters-form__checkbox"
+                type="checkbox"
+                name="category"
+                value="popular"
+              >
               Популярные
             </label>
 
-            <label>
-              <input type="checkbox" name="category" value="new">
+            <label class="filters-form__label">
+              <input
+                class="filters-form__checkbox"
+                type="checkbox"
+                name="category"
+                value="new"
+              >
               Новинки
             </label>
+
           </fieldset>
 
-          <fieldset>
-            <legend>Цена</legend>
+          <!-- Фильтр цены -->
+          <fieldset class="filters-form__group">
 
-            <label for="price-from">От</label>
+            <legend class="filters-form__legend">
+              Цена
+            </legend>
+
+            <label class="filters-form__label" for="price-from">
+              От
+            </label>
+
             <input
+              class="filters-form__input"
               id="price-from"
               name="price-from"
               type="number"
@@ -93,32 +179,47 @@
               placeholder="0"
             >
 
-            <label for="price-to">До</label>
+            <label class="filters-form__label" for="price-to">
+              До
+            </label>
+
             <input
+              class="filters-form__input"
               id="price-to"
               name="price-to"
               type="number"
               min="0"
               placeholder="5000"
             >
+
           </fieldset>
 
-          <button class="button" type="submit">
+          <button
+            class="button button--primary"
+            type="submit"
+          >
             Применить
           </button>
 
         </form>
+
       </aside>
 
-      <!-- Товары справа -->
+      <!-- Список товаров -->
       <section class="catalog-products">
-        <h2>Список товаров</h2>
+
+        <h2 class="catalog-products__title">
+          Список товаров
+        </h2>
 
         <div class="products-grid">
 
           <!-- Товар 1 -->
           <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
+
+            <h3 class="product-card__title">
+              Товар 1
+            </h3>
 
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -128,14 +229,21 @@
               Цена: 1000 руб.
             </p>
 
-            <a class="button" href="index.html#popular">
+            <a
+              class="button button--primary product-card__button"
+              href="index.html#popular"
+            >
               Подробнее
             </a>
+
           </article>
 
-          <!-- Товар 2 -->
+          <!-- Товар 2 со скидкой -->
           <article class="product-card product-card--discount">
-            <h3 class="product-card__title">Товар 2</h3>
+
+            <h3 class="product-card__title">
+              Товар 2
+            </h3>
 
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -145,14 +253,21 @@
               Цена: 1500 руб.
             </p>
 
-            <a class="button" href="index.html#popular">
+            <a
+              class="button button--primary product-card__button"
+              href="index.html#popular"
+            >
               Подробнее
             </a>
+
           </article>
 
           <!-- Товар 3 -->
           <article class="product-card">
-            <h3 class="product-card__title">Товар 3</h3>
+
+            <h3 class="product-card__title">
+              Товар 3
+            </h3>
 
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -162,9 +277,13 @@
               Цена: 2000 руб.
             </p>
 
-            <a class="button" href="index.html#popular">
+            <a
+              class="button button--primary product-card__button"
+              href="index.html#popular"
+            >
               Подробнее
             </a>
+
           </article>
 
         </div>
@@ -174,10 +293,21 @@
 
   </main>
 
-  <!-- Подвал -->
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+
+    <div class="site-footer__inner">
+
+      <p class="site-footer__copyright">
+        &copy; 2026 Учебный проект. Все права защищены.
+      </p>
+
+      <p class="site-footer__description">
+        Дисциплина: Фронтенд и бэкенд разработка
+      </p>
+
+    </div>
+
   </footer>
 
 </body>
