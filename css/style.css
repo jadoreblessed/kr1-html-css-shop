@@ -603,3 +603,226 @@ a:focus-visible {
     flex-direction: column;
   }
 }
+
+/* ==================================
+   21. Таблица сравнения товаров
+   ================================== */
+
+.comparison__description {
+  margin-bottom: var(--space-lg);
+  color: var(--color-muted);
+}
+
+.comparison__wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.comparison__table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison__caption {
+  padding: var(--space-md);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  background-color: var(--color-surface);
+}
+
+.comparison__table th,
+.comparison__table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comparison__table thead {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.comparison__table tbody th {
+  font-weight: 700;
+  background-color: var(--color-surface);
+}
+
+.comparison__table tbody tr:nth-child(even) {
+  background-color: var(--color-surface-accent);
+}
+
+.comparison__table tbody tr:hover {
+  background-color: #e3efff;
+}
+
+.comparison__table tbody tr:last-child th,
+.comparison__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==================================
+   22. Улучшенное модальное окно
+   ================================== */
+
+.order-dialog {
+  width: min(100% - 32px, 560px);
+  max-height: min(90vh, 800px);
+  padding: var(--space-xl);
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.order-dialog[open] {
+  animation: dialog-appear 0.25s ease-out;
+}
+
+.order-dialog::backdrop {
+  background-color: rgba(15, 25, 45, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.order-dialog__title {
+  margin: 0 0 var(--space-lg);
+  padding-bottom: var(--space-md);
+  color: var(--color-text);
+  font-size: 26px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.order-form__input {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.order-form__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.12);
+}
+
+.order-form__input--error,
+.order-form__input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.order-form__actions {
+  justify-content: flex-end;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+@keyframes dialog-appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==================================
+   23. Фиксированная кнопка Наверх
+   ================================== */
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 50%;
+
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(0, 87, 184, 0.25);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-4px);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ==================================
+   24. Sticky-фильтр каталога
+   ================================== */
+
+@media (min-width: 701px) {
+  .catalog-filters {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+  }
+}
+
+/* ==================================
+   25. Мобильная адаптация
+   ================================== */
+
+@media (max-width: 700px) {
+  .order-dialog {
+    padding: var(--space-lg);
+  }
+
+  .order-dialog__title {
+    font-size: 22px;
+  }
+
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .catalog-filters {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* Уважение настройки уменьшения анимаций */
+@media (prefers-reduced-motion: reduce) {
+  .order-dialog[open] {
+    animation: none;
+  }
+
+  .back-to-top {
+    transition: none;
+  }
+}

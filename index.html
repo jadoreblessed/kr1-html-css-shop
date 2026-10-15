@@ -25,7 +25,7 @@
     content="https://jadoreblessed.github.io/kr1-html-css-shop/images/preview.jpg"
   >
 
-  <!-- Подключение файлов -->
+  <!-- Подключение CSS и JavaScript -->
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -105,7 +105,10 @@
         или каталога услуг.
       </p>
 
-      <a class="button button--primary hero__button" href="#popular">
+      <a
+        class="button button--primary hero__button"
+        href="#popular"
+      >
         Перейти к товарам
       </a>
 
@@ -119,6 +122,7 @@
       </h2>
 
       <ul class="advantages-list">
+
         <li class="advantages-list__item">
           Понятная HTML-структура
         </li>
@@ -134,6 +138,7 @@
         <li class="advantages-list__item">
           Подготовка к разработке многостраничного сайта
         </li>
+
       </ul>
 
     </section>
@@ -147,7 +152,7 @@
 
       <div class="products-grid">
 
-        <!-- Карточка 1 -->
+        <!-- Карточка товара 1 -->
         <article class="product-card product-card--featured">
 
           <h3 class="product-card__title">
@@ -172,7 +177,7 @@
 
         </article>
 
-        <!-- Карточка 2 -->
+        <!-- Карточка товара 2 -->
         <article class="product-card">
 
           <h3 class="product-card__title">
@@ -197,7 +202,7 @@
 
         </article>
 
-        <!-- Карточка 3 -->
+        <!-- Карточка товара 3 -->
         <article class="product-card">
 
           <h3 class="product-card__title">
@@ -223,6 +228,81 @@
         </article>
 
       </div>
+
+    </section>
+
+    <!-- Таблица сравнения товаров -->
+    <section class="section comparison" id="comparison">
+
+      <h2 class="section__title">
+        Сравнение товаров
+      </h2>
+
+      <p class="comparison__description">
+        Сравните характеристики товаров и выберите
+        наиболее подходящий вариант.
+      </p>
+
+      <div class="comparison__wrapper">
+
+        <table class="comparison__table">
+
+          <caption class="comparison__caption">
+            Сравнительная таблица товаров
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Характеристика</th>
+              <th scope="col">Товар 1</th>
+              <th scope="col">Товар 2</th>
+              <th scope="col">Товар 3</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <th scope="row">Цена</th>
+              <td>1000 руб.</td>
+              <td>1500 руб.</td>
+              <td>2000 руб.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Категория</th>
+              <td>Базовый</td>
+              <td>Стандартный</td>
+              <td>Премиум</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Гарантия</th>
+              <td>6 месяцев</td>
+              <td>12 месяцев</td>
+              <td>24 месяца</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Доставка</th>
+              <td>Платная</td>
+              <td>Бесплатная</td>
+              <td>Бесплатная</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Поддержка</th>
+              <td>Базовая</td>
+              <td>Стандартная</td>
+              <td>Приоритетная</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
     </section>
 
     <!-- Дополнительная информация -->
@@ -234,16 +314,16 @@
 
       <p class="aside-info__text">
         На следующих практических занятиях этот проект
-        будет расширяться: появятся формы, модальное окно,
-        дополнительные страницы, Flex/Grid, БЭМ-структура
-        и адаптивная версия сайта.
+        будет расширяться: появятся дополнительные страницы,
+        новые интерфейсные элементы, формы, модальные окна
+        и интерактивные компоненты.
       </p>
 
     </aside>
 
   </main>
 
-  <!-- Подвал -->
+  <!-- Подвал сайта -->
   <footer class="site-footer" id="contacts">
 
     <div class="site-footer__inner">
@@ -260,7 +340,7 @@
 
   </footer>
 
-  <!-- Модальное окно -->
+  <!-- Улучшенное модальное окно -->
   <dialog
     class="order-dialog"
     id="order-dialog"
@@ -365,7 +445,7 @@
 
       </div>
 
-      <!-- Тема -->
+      <!-- Тема заявки -->
       <div class="order-form__field">
 
         <label class="order-form__label" for="order-topic">
@@ -435,7 +515,7 @@
 
       </div>
 
-      <!-- Кнопки -->
+      <!-- Кнопки модального окна -->
       <div class="order-form__actions">
 
         <button
@@ -459,7 +539,7 @@
 
   </dialog>
 
-  <!-- Сообщение после отправки -->
+  <!-- Сообщение об успешной отправке -->
   <p
     class="success-message"
     id="success-message"
@@ -469,6 +549,18 @@
   >
     Форма успешно отправлена!
   </p>
+
+  <!-- Фиксированная кнопка Наверх -->
+  <button
+    class="back-to-top"
+    id="back-to-top"
+    type="button"
+    aria-label="Вернуться наверх страницы"
+    title="Наверх"
+    hidden
+  >
+    ↑
+  </button>
 
 </body>
 </html>

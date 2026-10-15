@@ -1,103 +1,183 @@
 
-// Получаем модальное окно по id.
+// ==================================
+// 1. Получение элементов
+// ==================================
+
 const orderDialog = document.getElementById('order-dialog');
 
-// Получаем все кнопки заказа в карточках товаров.
-const orderButtons = document.querySelectorAll('.product-card__button');
+const orderButtons = document.querySelectorAll(
+  '.product-card__button'
+);
 
-// Получаем кнопку закрытия модального окна.
-const closeDialogButton = document.getElementById('close-order-dialog');
+const closeDialogButton = document.getElementById(
+  'close-order-dialog'
+);
 
-// Получаем скрытое поле выбранного товара.
-const selectedProductInput = document.getElementById('selected-product');
+const selectedProductInput = document.getElementById(
+  'selected-product'
+);
 
-// Получаем форму заявки.
 const orderForm = document.getElementById('order-form');
 
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
+const successMessage = document.getElementById(
+  'success-message'
+);
 
-// Перебираем все кнопки «Заказать».
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
+const backToTopButton = document.getElementById(
+  'back-to-top'
+);
 
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
+// ==================================
+// 2. Улучшенное модальное окно
+// ==================================
 
-    // Сбрасываем ранее введённые данные.
-    orderForm.reset();
+if (
+  orderDialog &&
+  orderForm &&
+  closeDialogButton &&
+  selectedProductInput
+) {
 
-    // Убираем ошибки предыдущей проверки.
-    orderForm.querySelectorAll('[aria-invalid]').forEach((field) => {
-      field.removeAttribute('aria-invalid');
+  // Открытие окна по кнопке Заказать
+  orderButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+
+      const productName = button.dataset.product || '';
+
+      // Очистка предыдущих значений
+      orderForm.reset();
+
+      // Убираем ошибки
+      orderForm.querySelectorAll('[aria-invalid]').forEach((field) => {
+        field.removeAttribute('aria-invalid');
+      });
+
+      // Сохраняем выбранный товар
+      selectedProductInput.value = productName;
+
+      // Скрываем предыдущее сообщение
+      if (successMessage) {
+        successMessage.hidden = true;
+      }
+
+      // Открываем окно
+      orderDialog.showModal();
+
+      // Фокусируемся на поле имени
+      document.getElementById('order-name')?.focus();
     });
-
-    // Записываем название выбранного товара.
-    selectedProductInput.value = productName;
-
-    // Скрываем предыдущее сообщение об успехе.
-    successMessage.hidden = true;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
   });
-});
 
-// Закрываем модальное окно.
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
+  // Закрытие по кнопке
+  closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
 
-// Проверяем форму перед отправкой.
-orderForm.addEventListener('submit', (event) => {
+  // Закрытие при клике вне окна
+  orderDialog.addEventListener('click', (event) => {
 
-  // Отменяем стандартную отправку формы.
-  event.preventDefault();
+    const rect = orderDialog.getBoundingClientRect();
 
-  // Получаем поля формы.
-  const fields = orderForm.querySelectorAll(
-    '.order-form__input, .order-form__checkbox'
-  );
+    const clickedOutside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
 
-  // Проверяем каждое поле.
-  fields.forEach((field) => {
-    if (!field.checkValidity()) {
-      field.setAttribute('aria-invalid', 'true');
-    } else {
-      field.removeAttribute('aria-invalid');
+    if (clickedOutside) {
+      orderDialog.close();
     }
   });
 
-  // Если форма заполнена неправильно.
-  if (!orderForm.checkValidity()) {
-    orderForm.reportValidity();
-    return;
-  }
+  // Escape поддерживается элементом dialog автоматически
 
-  // Закрываем модальное окно.
-  orderDialog.close();
+  // ==================================
+  // 3. Проверка формы
+  // ==================================
 
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
+  orderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-  // Очищаем форму.
-  orderForm.reset();
-});
+    const fields = orderForm.querySelectorAll(
+      '.order-form__input, .order-form__checkbox'
+    );
 
-// Убираем ошибку при исправлении поля.
-orderForm.addEventListener('input', (event) => {
-  const field = event.target;
+    fields.forEach((field) => {
+      if (!field.checkValidity()) {
+        field.setAttribute('aria-invalid', 'true');
+      } else {
+        field.removeAttribute('aria-invalid');
+      }
+    });
 
-  if (field.checkValidity()) {
-    field.removeAttribute('aria-invalid');
-  }
-});
+    // Если есть ошибки
+    if (!orderForm.checkValidity()) {
+      orderForm.reportValidity();
 
-// Проверяем изменения select и checkbox.
-orderForm.addEventListener('change', (event) => {
-  const field = event.target;
+      const firstInvalidField = orderForm.querySelector(
+        '[aria-invalid="true"]'
+      );
 
-  if (field.checkValidity()) {
-    field.removeAttribute('aria-invalid');
-  }
-});
+      firstInvalidField?.focus();
+      return;
+    }
+
+    // Имитация успешной отправки
+    orderDialog.close();
+
+    if (successMessage) {
+      successMessage.hidden = false;
+
+      successMessage.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+
+    orderForm.reset();
+  });
+
+  // Убираем ошибку после исправления поля
+  const clearFieldError = (event) => {
+    const field = event.target;
+
+    if (field.checkValidity()) {
+      field.removeAttribute('aria-invalid');
+    }
+  };
+
+  orderForm.addEventListener('input', clearFieldError);
+  orderForm.addEventListener('change', clearFieldError);
+}
+
+// ==================================
+// 4. Фиксированная кнопка Наверх
+// ==================================
+
+if (backToTopButton) {
+
+  // Показываем кнопку после прокрутки
+  const updateBackToTop = () => {
+    backToTopButton.hidden = window.scrollY <= 300;
+  };
+
+  window.addEventListener('scroll', updateBackToTop, {
+    passive: true
+  });
+
+  // Проверяем состояние при загрузке
+  updateBackToTop();
+
+  // Плавно прокручиваем страницу наверх
+  backToTopButton.addEventListener('click', () => {
+
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotion ? 'instant' : 'smooth'
+    });
+  });
+}
