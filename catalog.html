@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Каталог LUMEN: настольные лампы Base, Flex и Pro. Фильтрация по модели и цене."
+    content="Каталог LUMEN: девять моделей настольных ламп для чтения, работы и учёбы."
   >
 
   <title>Каталог настольных ламп — LUMEN</title>
@@ -85,8 +85,9 @@
       </h1>
 
       <p class="section__description">
-        Выберите модель, сравните характеристики
-        и откройте подробное описание.
+        Девять моделей для чтения, работы и учёбы.
+        Выберите назначение и диапазон цен,
+        чтобы найти подходящую лампу.
       </p>
     </section>
 
@@ -94,7 +95,7 @@
       class="catalog-layout"
       aria-label="Каталог товаров с фильтрами"
     >
-      <!-- Sticky-фильтр -->
+      <!-- Фильтры -->
       <aside
         class="catalog-filters"
         aria-labelledby="filters-title"
@@ -173,7 +174,7 @@
               type="number"
               min="0"
               step="1"
-              placeholder="2000"
+              placeholder="3000"
             >
           </fieldset>
 
@@ -187,7 +188,7 @@
         </form>
       </aside>
 
-      <!-- Товары -->
+      <!-- Каталог -->
       <section
         class="catalog-products"
         aria-labelledby="products-title"
@@ -201,11 +202,11 @@
           id="products-count"
           role="status"
         >
-          Найдено товаров: 3
+          Найдено товаров: 9
         </p>
 
         <div class="products-grid products-grid--catalog">
-          <!-- Base -->
+          <!-- 1. Base -->
           <article
             class="product-card"
             data-category="reading"
@@ -232,14 +233,10 @@
             </a>
 
             <div class="product-card__body">
-              <p class="product-card__category">
-                Для чтения
-              </p>
+              <p class="product-card__category">Для чтения</p>
 
               <h3 class="product-card__title">
-                <a href="product.html?id=base">
-                  Lumen Base
-                </a>
+                <a href="product.html?id=base">Lumen Base</a>
               </h3>
 
               <p class="product-card__description">
@@ -248,20 +245,9 @@
               </p>
 
               <dl class="product-card__specs">
-                <div>
-                  <dt>Мощность</dt>
-                  <dd>5 Вт</dd>
-                </div>
-
-                <div>
-                  <dt>Температура</dt>
-                  <dd>3000 К</dd>
-                </div>
-
-                <div>
-                  <dt>Гарантия</dt>
-                  <dd>6 месяцев</dd>
-                </div>
+                <div><dt>Мощность</dt><dd>5 Вт</dd></div>
+                <div><dt>Температура</dt><dd>3000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>6 месяцев</dd></div>
               </dl>
 
               <p class="product-card__stock">В наличии</p>
@@ -284,7 +270,7 @@
             </div>
           </article>
 
-          <!-- Flex -->
+          <!-- 2. Flex -->
           <article
             class="product-card product-card--featured"
             data-category="work"
@@ -312,13 +298,11 @@
 
             <div class="product-card__body">
               <p class="product-card__category">
-                Для работы
+                Для работы и учёбы
               </p>
 
               <h3 class="product-card__title">
-                <a href="product.html?id=flex">
-                  Lumen Flex
-                </a>
+                <a href="product.html?id=flex">Lumen Flex</a>
               </h3>
 
               <p class="product-card__description">
@@ -327,20 +311,9 @@
               </p>
 
               <dl class="product-card__specs">
-                <div>
-                  <dt>Мощность</dt>
-                  <dd>8 Вт</dd>
-                </div>
-
-                <div>
-                  <dt>Температура</dt>
-                  <dd>4000 К</dd>
-                </div>
-
-                <div>
-                  <dt>Гарантия</dt>
-                  <dd>12 месяцев</dd>
-                </div>
+                <div><dt>Мощность</dt><dd>8 Вт</dd></div>
+                <div><dt>Температура</dt><dd>4000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>12 месяцев</dd></div>
               </dl>
 
               <p class="product-card__stock">В наличии</p>
@@ -363,7 +336,7 @@
             </div>
           </article>
 
-          <!-- Pro -->
+          <!-- 3. Pro -->
           <article
             class="product-card"
             data-category="universal"
@@ -395,9 +368,7 @@
               </p>
 
               <h3 class="product-card__title">
-                <a href="product.html?id=pro">
-                  Lumen Pro
-                </a>
+                <a href="product.html?id=pro">Lumen Pro</a>
               </h3>
 
               <p class="product-card__description">
@@ -406,20 +377,9 @@
               </p>
 
               <dl class="product-card__specs">
-                <div>
-                  <dt>Мощность</dt>
-                  <dd>12 Вт</dd>
-                </div>
-
-                <div>
-                  <dt>Температура</dt>
-                  <dd>3000–6000 К</dd>
-                </div>
-
-                <div>
-                  <dt>Гарантия</dt>
-                  <dd>24 месяца</dd>
-                </div>
+                <div><dt>Мощность</dt><dd>12 Вт</dd></div>
+                <div><dt>Температура</dt><dd>3000–6000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>24 месяца</dd></div>
               </dl>
 
               <p class="product-card__stock">В наличии</p>
@@ -441,6 +401,398 @@
               </button>
             </div>
           </article>
+
+          <!-- 4. Mini -->
+          <article
+            class="product-card"
+            data-category="reading"
+            data-price="900"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=mini"
+              aria-label="Подробнее о Lumen Mini"
+            >
+              <span class="product-card__badge">
+                Компактная
+              </span>
+
+              <span
+                class="lamp-art lamp-art--base lamp-art--mini"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">Для чтения</p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=mini">Lumen Mini</a>
+              </h3>
+
+              <p class="product-card__description">
+                Небольшая лампа с тёплым светом
+                для тумбы и маленького стола.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>4 Вт</dd></div>
+                <div><dt>Температура</dt><dd>2700 К</dd></div>
+                <div><dt>Гарантия</dt><dd>6 месяцев</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">900 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=mini"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="mini"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <!-- 5. Arc -->
+          <article
+            class="product-card"
+            data-category="universal"
+            data-price="1800"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=arc"
+              aria-label="Подробнее о Lumen Arc"
+            >
+              <span class="product-card__badge">
+                Смена температуры
+              </span>
+
+              <span
+                class="lamp-art lamp-art--flex lamp-art--arc"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для любых задач
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=arc">Lumen Arc</a>
+              </h3>
+
+              <p class="product-card__description">
+                Три уровня яркости и регулировка температуры
+                для разных задач.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>9 Вт</dd></div>
+                <div><dt>Температура</dt><dd>3000–5000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>12 месяцев</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">1 800 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=arc"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="arc"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <!-- 6. Studio -->
+          <article
+            class="product-card"
+            data-category="work"
+            data-price="2500"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=studio"
+              aria-label="Подробнее о Lumen Studio"
+            >
+              <span class="product-card__badge">
+                Для творчества
+              </span>
+
+              <span
+                class="lamp-art lamp-art--flex lamp-art--studio"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для работы и учёбы
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=studio">Lumen Studio</a>
+              </h3>
+
+              <p class="product-card__description">
+                Нейтральный свет для документов,
+                рисования и занятий.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>14 Вт</dd></div>
+                <div><dt>Температура</dt><dd>4000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>24 месяца</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">2 500 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=studio"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="studio"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <!-- 7. Soft -->
+          <article
+            class="product-card"
+            data-category="reading"
+            data-price="1200"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=soft"
+              aria-label="Подробнее о Lumen Soft"
+            >
+              <span class="product-card__badge">
+                Тёплый свет
+              </span>
+
+              <span
+                class="lamp-art lamp-art--base lamp-art--soft"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">Для чтения</p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=soft">Lumen Soft</a>
+              </h3>
+
+              <p class="product-card__description">
+                Два режима яркости для чтения
+                и вечернего освещения.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>6 Вт</dd></div>
+                <div><dt>Температура</dt><dd>3000 К</dd></div>
+                <div><dt>Гарантия</dt><dd>12 месяцев</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">1 200 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=soft"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="soft"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <!-- 8. Air -->
+          <article
+            class="product-card"
+            data-category="work"
+            data-price="2200"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=air"
+              aria-label="Подробнее о Lumen Air"
+            >
+              <span class="product-card__badge">
+                Тонкая панель
+              </span>
+
+              <span
+                class="lamp-art lamp-art--pro lamp-art--air"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для работы и учёбы
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=air">Lumen Air</a>
+              </h3>
+
+              <p class="product-card__description">
+                Четыре уровня яркости и настройка
+                температуры света.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>10 Вт</dd></div>
+                <div><dt>Температура</dt><dd>3500–5500 К</dd></div>
+                <div><dt>Гарантия</dt><dd>18 месяцев</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">2 200 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=air"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="air"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <!-- 9. Max -->
+          <article
+            class="product-card"
+            data-category="universal"
+            data-price="3000"
+          >
+            <a
+              class="product-card__visual"
+              href="product.html?id=max"
+              aria-label="Подробнее о Lumen Max"
+            >
+              <span class="product-card__badge">
+                Большой стол
+              </span>
+
+              <span
+                class="lamp-art lamp-art--pro lamp-art--max"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
+            </a>
+
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для любых задач
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=max">Lumen Max</a>
+              </h3>
+
+              <p class="product-card__description">
+                Широкая панель и шесть уровней яркости
+                для большого стола.
+              </p>
+
+              <dl class="product-card__specs">
+                <div><dt>Мощность</dt><dd>18 Вт</dd></div>
+                <div><dt>Температура</dt><dd>2700–6500 К</dd></div>
+                <div><dt>Гарантия</dt><dd>24 месяца</dd></div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">3 000 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=max"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="max"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
         </div>
 
         <p
@@ -448,8 +800,8 @@
           id="products-empty"
           hidden
         >
-          Товары не найдены. Измените условия
-          или сбросьте фильтры.
+          Товары не найдены.
+          Измените условия или сбросьте фильтры.
         </p>
       </section>
     </section>

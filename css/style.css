@@ -1395,3 +1395,28 @@ body:has(.order-dialog[open]) {
     transition: none !important;
   }
 }
+/* Цвета дополнительных моделей */
+
+.lamp-art--mini {
+  --lamp-color: #ae624b;
+}
+
+.lamp-art--arc {
+  --lamp-color: #415a78;
+}
+
+.lamp-art--studio {
+  --lamp-color: #834958;
+}
+
+.lamp-art--soft {
+  --lamp-color: #8b78a2;
+}
+
+.lamp-art--air {
+  --lamp-color: #708a83;
+}
+
+.lamp-art--max {
+  --lamp-color: #695044;
+}

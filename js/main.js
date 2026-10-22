@@ -1,7 +1,7 @@
 'use strict';
 
 // ==================================
-// 1. Данные учебного каталога
+// 1. Данные девяти товаров
 // ==================================
 
 const products = {
@@ -10,15 +10,12 @@ const products = {
     category: 'Для чтения',
     sku: 'LM-001',
     price: 1000,
-
     power: '5 Вт',
     temperature: '3000 К',
     brightness: '1 уровень',
-
     color: 'Песочный',
     material: 'Металл, ABS-пластик',
     height: '32 см',
-
     warranty: '6 месяцев',
     delivery: '300 ₽',
 
@@ -34,15 +31,12 @@ const products = {
     category: 'Для работы и учёбы',
     sku: 'LM-002',
     price: 1500,
-
     power: '8 Вт',
     temperature: '4000 К',
     brightness: '3 уровня',
-
     color: 'Шалфейный',
     material: 'Металл, ABS-пластик',
     height: '38 см',
-
     warranty: '12 месяцев',
     delivery: 'Бесплатно',
 
@@ -58,15 +52,12 @@ const products = {
     category: 'Для любых задач',
     sku: 'LM-003',
     price: 2000,
-
     power: '12 Вт',
     temperature: '3000–6000 К',
     brightness: '5 уровней',
-
     color: 'Графитовый',
     material: 'Алюминий, ABS-пластик',
     height: '42 см',
-
     warranty: '24 месяца',
     delivery: 'Бесплатно',
 
@@ -76,6 +67,141 @@ const products = {
       'Выбирайте тёплый свет для отдыха или более холодный ' +
       'для дневных задач. Широкая световая панель ' +
       'освещает большую область стола.'
+  },
+
+  mini: {
+    name: 'Lumen Mini',
+    category: 'Для чтения',
+    sku: 'LM-004',
+    price: 900,
+    power: '4 Вт',
+    temperature: '2700 К',
+    brightness: '1 уровень',
+    color: 'Терракотовый',
+    material: 'Металл, ABS-пластик',
+    height: '25 см',
+    warranty: '6 месяцев',
+    delivery: '300 ₽',
+    art: 'base',
+
+    description:
+      'Небольшая лампа для прикроватной тумбы и компактного стола. ' +
+      'Тёплый свет 2700 К подходит для вечернего чтения. ' +
+      'Устойчивое основание и один режим яркости ' +
+      'обеспечивают простое управление.'
+  },
+
+  arc: {
+    name: 'Lumen Arc',
+    category: 'Для любых задач',
+    sku: 'LM-005',
+    price: 1800,
+    power: '9 Вт',
+    temperature: '3000–5000 К',
+    brightness: '3 уровня',
+    color: 'Тёмно-синий',
+    material: 'Металл, ABS-пластик',
+    height: '40 см',
+    warranty: '12 месяцев',
+    delivery: 'Бесплатно',
+    art: 'flex',
+
+    description:
+      'Лампа с наклонной стойкой и регулировкой температуры света. ' +
+      'Три уровня яркости помогают подобрать освещение ' +
+      'для работы и отдыха. Корпус занимает немного места ' +
+      'на рабочем столе.'
+  },
+
+  studio: {
+    name: 'Lumen Studio',
+    category: 'Для работы и учёбы',
+    sku: 'LM-006',
+    price: 2500,
+    power: '14 Вт',
+    temperature: '4000 К',
+    brightness: '5 уровней',
+    color: 'Бордовый',
+    material: 'Алюминий, ABS-пластик',
+    height: '46 см',
+    warranty: '24 месяца',
+    delivery: 'Бесплатно',
+    art: 'flex',
+
+    description:
+      'Модель для просторного рабочего места. ' +
+      'Нейтральный свет 4000 К и пять уровней яркости ' +
+      'позволяют настроить освещение для документов, ' +
+      'рисования и занятий. Тяжёлое основание ' +
+      'обеспечивает устойчивость.'
+  },
+
+  soft: {
+    name: 'Lumen Soft',
+    category: 'Для чтения',
+    sku: 'LM-007',
+    price: 1200,
+    power: '6 Вт',
+    temperature: '3000 К',
+    brightness: '2 уровня',
+    color: 'Сиреневый',
+    material: 'Металл, ABS-пластик',
+    height: '30 см',
+    warranty: '12 месяцев',
+    delivery: '300 ₽',
+    art: 'base',
+
+    description:
+      'Лампа с округлым плафоном и тёплым светом. ' +
+      'Два режима яркости подходят для чтения ' +
+      'и мягкого вечернего освещения. Компактный корпус ' +
+      'удобно разместить у кресла или на тумбе.'
+  },
+
+  air: {
+    name: 'Lumen Air',
+    category: 'Для работы и учёбы',
+    sku: 'LM-008',
+    price: 2200,
+    power: '10 Вт',
+    temperature: '3500–5500 К',
+    brightness: '4 уровня',
+    color: 'Серо-зелёный',
+    material: 'Алюминий, ABS-пластик',
+    height: '41 см',
+    warranty: '18 месяцев',
+    delivery: 'Бесплатно',
+    art: 'pro',
+
+    description:
+      'Лампа с тонкой световой панелью для современного ' +
+      'рабочего стола. Четыре уровня яркости ' +
+      'и настройка температуры помогают подобрать свет ' +
+      'для разных задач. Плоское основание оставляет ' +
+      'место для канцелярии.'
+  },
+
+  max: {
+    name: 'Lumen Max',
+    category: 'Для любых задач',
+    sku: 'LM-009',
+    price: 3000,
+    power: '18 Вт',
+    temperature: '2700–6500 К',
+    brightness: '6 уровней',
+    color: 'Тёмно-коричневый',
+    material: 'Алюминий, ABS-пластик',
+    height: '50 см',
+    warranty: '24 месяца',
+    delivery: 'Бесплатно',
+    art: 'pro',
+
+    description:
+      'Самая мощная модель коллекции для большого стола. ' +
+      'Широкая панель, шесть уровней яркости ' +
+      'и диапазон температуры от 2700 до 6500 К ' +
+      'позволяют использовать лампу для работы, ' +
+      'творчества и вечернего чтения.'
   }
 };
 
@@ -158,7 +284,15 @@ if (productDetail) {
 
     const art = document.getElementById('product-art');
 
-    art.classList.add(`lamp-art--${productId}`);
+    // Базовая форма лампы.
+    art.classList.add(
+      `lamp-art--${product.art || productId}`
+    );
+
+    // Индивидуальный цвет новой модели.
+    if (product.art) {
+      art.classList.add(`lamp-art--${productId}`);
+    }
 
     art.setAttribute(
       'aria-label',
@@ -249,6 +383,9 @@ if (filtersForm) {
       count > 0;
   };
 
+  // Счётчик определяется по фактическому числу карточек.
+  applyFilters();
+
   filtersForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -277,7 +414,7 @@ if (filtersForm) {
   filtersForm.addEventListener('reset', () => {
     to.setCustomValidity('');
 
-    // Значения восстанавливаются после события reset.
+    // Ждём восстановления исходных значений формы.
     setTimeout(applyFilters, 0);
   });
 }
@@ -285,9 +422,6 @@ if (filtersForm) {
 // ==================================
 // 5. Общая форма заявки
 // ==================================
-
-// Здесь используется постоянная HTML-строка.
-// Пользовательские данные в неё не вставляются.
 
 document.body.insertAdjacentHTML(
   'beforeend',
@@ -564,7 +698,6 @@ document.addEventListener('click', (event) => {
   document.getElementById('order-topic').value =
     product ? 'product' : 'consultation';
 
-  // Минимальная дата с учётом локального часового пояса.
   const today = new Date();
 
   const localDate = new Date(
@@ -589,7 +722,6 @@ document
     orderDialog.close();
   });
 
-// Закрытие по клику на затемнение.
 orderDialog.addEventListener('click', (event) => {
   if (event.target !== orderDialog) {
     return;
@@ -608,8 +740,7 @@ orderDialog.addEventListener('click', (event) => {
   }
 });
 
-// Escape работает у dialog автоматически.
-// После закрытия возвращаем фокус на исходную кнопку.
+// Escape поддерживается элементом dialog автоматически.
 orderDialog.addEventListener('close', () => {
   returnFocus?.focus();
 });
