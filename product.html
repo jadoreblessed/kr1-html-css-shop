@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Подробная информация о настольной лампе LUMEN: описание, характеристики, комплектация и гарантия."
+  >
+
+  <title>Карточка товара — LUMEN</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">
+    Перейти к содержимому
+  </a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a
+        class="site-header__logo"
+        href="index.html"
+        aria-label="LUMEN — главная"
+      >
+        LUMEN<span class="site-header__dot">.</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li>
+            <a class="site-nav__link" href="index.html">
+              Главная
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="catalog.html">
+              Каталог
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="index.html#reviews">
+              Отзывы
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="index.html#faq">
+              FAQ
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="contacts.html">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-hidden="true"> / </span>
+
+      <a href="catalog.html">Каталог</a>
+      <span aria-hidden="true"> / </span>
+
+      <span id="product-breadcrumb" aria-current="page">
+        Товар
+      </span>
+    </nav>
+
+    <!-- Данные выбранной модели подставляются из main.js -->
+    <article class="product-detail" id="product-detail" hidden>
+      <div class="product-detail__layout">
+        <div class="product-detail__visual">
+          <div
+            class="lamp-art"
+            id="product-art"
+            role="img"
+          >
+            <span class="lamp-art__glow"></span>
+            <span class="lamp-art__shade"></span>
+            <span class="lamp-art__stem"></span>
+            <span class="lamp-art__base"></span>
+          </div>
+
+          <p class="product-detail__caption">
+            Иллюстрация модели · учебный каталог
+          </p>
+        </div>
+
+        <div class="product-detail__summary">
+          <p class="eyebrow" id="product-category"></p>
+
+          <h1
+            class="product-detail__title"
+            id="product-name"
+          ></h1>
+
+          <p
+            class="product-detail__article"
+            id="product-sku"
+          ></p>
+
+          <p class="product-card__stock">
+            В наличии
+          </p>
+
+          <p
+            class="product-detail__description"
+            id="product-description"
+          ></p>
+
+          <p
+            class="product-detail__price"
+            id="product-price"
+          ></p>
+
+          <button
+            class="button button--primary"
+            type="button"
+            id="product-order"
+          >
+            Оформить заявку
+          </button>
+
+          <ul class="product-detail__benefits">
+            <li id="product-delivery"></li>
+            <li id="product-warranty"></li>
+            <li>
+              Встроенный LED-модуль и адаптер в комплекте
+            </li>
+          </ul>
+
+          <a href="index.html#comparison">
+            Сравнить с другими моделями →
+          </a>
+        </div>
+      </div>
+
+      <section
+        class="section product-detail__section"
+        aria-labelledby="specs-title"
+      >
+        <h2 class="section__title" id="specs-title">
+          Характеристики
+        </h2>
+
+        <dl
+          class="product-detail__specs"
+          id="product-specs"
+        ></dl>
+      </section>
+
+      <section
+        class="section product-detail__section"
+        aria-labelledby="package-title"
+      >
+        <h2 class="section__title" id="package-title">
+          Что в коробке
+        </h2>
+
+        <ul class="product-detail__package">
+          <li>Настольная лампа выбранной модели</li>
+          <li>Сетевой адаптер питания</li>
+          <li>Инструкция по эксплуатации</li>
+          <li>Гарантийный талон</li>
+        </ul>
+      </section>
+
+      <section
+        class="section product-detail__section"
+        aria-labelledby="care-title"
+      >
+        <h2 class="section__title" id="care-title">
+          Использование и уход
+        </h2>
+
+        <p>
+          Установите лампу на ровную сухую поверхность.
+          Перед очисткой отключите питание.
+          Протирайте корпус мягкой сухой тканью,
+          не используйте абразивные средства
+          и не допускайте попадания воды внутрь.
+        </p>
+      </section>
+    </article>
+
+    <section class="section" id="product-error" hidden>
+      <h1 class="section__title">
+        Товар не найден
+      </h1>
+
+      <p>Такой модели в каталоге нет.</p>
+
+      <a class="button button--primary" href="catalog.html">
+        Вернуться в каталог
+      </a>
+    </section>
+
+    <noscript>
+      <p class="noscript-message">
+        Для загрузки характеристик включите JavaScript.
+        Основные параметры доступны в
+        <a href="index.html#comparison">таблице сравнения</a>.
+      </p>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-header__logo" href="index.html">
+        LUMEN.
+      </a>
+
+      <p>© 2026 · Учебный интернет-магазин</p>
+
+      <a href="contacts.html">
+        Обратная связь →
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

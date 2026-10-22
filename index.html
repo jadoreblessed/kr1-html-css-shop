@@ -1,49 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Учебный интернет-магазин</title>
-
   <meta
     name="description"
-    content="Учебный frontend-проект интернет-магазина."
+    content="LUMEN — учебный магазин настольных ламп. Каталог, характеристики, сравнение моделей и форма заявки."
   >
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
+  <meta property="og:title" content="LUMEN — свет для ваших идей">
   <meta
     property="og:description"
-    content="Учебный frontend-проект интернет-магазина."
-  >
-  <meta
-    property="og:image"
-    content="https://jadoreblessed.github.io/kr1-html-css-shop/images/preview.jpg"
+    content="Настольные лампы для работы, чтения и отдыха. Учебный проект."
   >
 
-  <!-- Подключение CSS и JavaScript -->
+  <title>LUMEN — свет для ваших идей</title>
+
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">
+    Перейти к содержимому
+  </a>
 
-  <!-- Шапка сайта -->
   <header class="site-header">
     <div class="site-header__inner">
-
-      <a class="site-header__logo" href="index.html">
-        ShopProject
+      <a
+        class="site-header__logo"
+        href="index.html"
+        aria-label="LUMEN — главная"
+      >
+        LUMEN<span class="site-header__dot">.</span>
       </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-
-          <li class="site-nav__item">
+          <li>
             <a
               class="site-nav__link site-nav__link--active"
               href="index.html"
@@ -53,227 +49,425 @@
             </a>
           </li>
 
-          <li class="site-nav__item">
+          <li>
             <a class="site-nav__link" href="catalog.html">
               Каталог
             </a>
           </li>
 
-          <li class="site-nav__item">
+          <li>
+            <a class="site-nav__link" href="#reviews">
+              Отзывы
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="#faq">
+              FAQ
+            </a>
+          </li>
+
+          <li>
             <a class="site-nav__link" href="contacts.html">
               Контакты
             </a>
           </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#advantages">
-              Преимущества
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#popular">
-              Популярные товары
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#contacts">
-              Обратная связь
-            </a>
-          </li>
-
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <main class="site-main">
-
+  <main class="site-main" id="main">
     <!-- Главный экран -->
     <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">
+          Свет. Порядок. Вдохновение.
+        </p>
 
-      <h1 class="hero__title">
-        Учебный интернет-магазин
-      </h1>
+        <h1 class="hero__title">
+          Место, где<br>
+          рождаются идеи.
+        </h1>
 
-      <p class="hero__description">
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан
-        многостраничный сайт интернет-магазина
-        или каталога услуг.
-      </p>
+        <p class="hero__description">
+          Хороший свет меняет рабочий стол. Найдите свою лампу
+          для учёбы, вечернего чтения и больших планов.
+        </p>
 
-      <a
-        class="button button--primary hero__button"
-        href="#popular"
-      >
-        Перейти к товарам
-      </a>
+        <div class="hero__actions">
+          <a class="button button--primary" href="catalog.html">
+            Выбрать лампу →
+          </a>
 
+          <a class="button button--secondary" href="#comparison">
+            Сравнить модели
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <span class="hero__label">
+          Коллекция / 2026
+        </span>
+
+        <div
+          class="lamp-art lamp-art--flex"
+          role="img"
+          aria-label="Зелёная настольная лампа Lumen Flex"
+        >
+          <span class="lamp-art__glow"></span>
+          <span class="lamp-art__shade"></span>
+          <span class="lamp-art__stem"></span>
+          <span class="lamp-art__base"></span>
+        </div>
+
+        <span class="hero__caption">
+          Lumen Flex · простая форма, мягкий свет
+        </span>
+      </div>
     </section>
 
     <!-- Преимущества -->
-    <section class="section" id="advantages">
+    <section
+      class="section"
+      id="advantages"
+      aria-labelledby="advantages-title"
+    >
+      <p class="eyebrow">
+        Продумано до мелочей
+      </p>
 
-      <h2 class="section__title">
-        Преимущества проекта
+      <h2 class="section__title" id="advantages-title">
+        Меньше лишнего. Больше света.
       </h2>
 
       <ul class="advantages-list">
-
         <li class="advantages-list__item">
-          Понятная HTML-структура
+          <span class="advantages-list__number">01</span>
+
+          <h3>Лаконичный дизайн</h3>
+
+          <p>
+            Спокойные цвета и простые формы
+            для любого рабочего стола.
+          </p>
         </li>
 
         <li class="advantages-list__item">
-          Семантические блоки страницы
+          <span class="advantages-list__number">02</span>
+
+          <h3>Выбор под задачу</h3>
+
+          <p>
+            От базового освещения до модели
+            с регулировкой температуры.
+          </p>
         </li>
 
         <li class="advantages-list__item">
-          Подключение внешнего CSS-файла
-        </li>
+          <span class="advantages-list__number">03</span>
 
-        <li class="advantages-list__item">
-          Подготовка к разработке многостраничного сайта
-        </li>
+          <h3>Понятное сравнение</h3>
 
+          <p>
+            Все характеристики, комплектация
+            и условия — на одной странице.
+          </p>
+        </li>
       </ul>
-
     </section>
 
     <!-- Популярные товары -->
-    <section class="section" id="popular">
+    <section
+      class="section"
+      id="popular"
+      aria-labelledby="popular-title"
+    >
+      <div class="section__heading">
+        <div>
+          <p class="eyebrow">На вашем столе</p>
 
-      <h2 class="section__title">
-        Популярные товары
-      </h2>
+          <h2 class="section__title" id="popular-title">
+            Три модели. Ваш ритм.
+          </h2>
+        </div>
 
-      <div class="products-grid">
-
-        <!-- Карточка товара 1 -->
-        <article class="product-card product-card--featured">
-
-          <h3 class="product-card__title">
-            Товар 1
-          </h3>
-
-          <p class="product-card__description">
-            Краткое описание учебного товара.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 1000 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 1"
-          >
-            Заказать
-          </button>
-
-        </article>
-
-        <!-- Карточка товара 2 -->
-        <article class="product-card">
-
-          <h3 class="product-card__title">
-            Товар 2
-          </h3>
-
-          <p class="product-card__description">
-            Краткое описание учебного товара.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 1500 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 2"
-          >
-            Заказать
-          </button>
-
-        </article>
-
-        <!-- Карточка товара 3 -->
-        <article class="product-card">
-
-          <h3 class="product-card__title">
-            Товар 3
-          </h3>
-
-          <p class="product-card__description">
-            Краткое описание учебного товара.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 2000 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 3"
-          >
-            Заказать
-          </button>
-
-        </article>
-
+        <a href="catalog.html">Весь каталог →</a>
       </div>
 
+      <div class="products-grid">
+        <!-- Base -->
+        <article class="product-card">
+          <a
+            class="product-card__visual"
+            href="product.html?id=base"
+            aria-label="Подробнее о Lumen Base"
+          >
+            <span class="product-card__badge">
+              Минимализм
+            </span>
+
+            <span
+              class="lamp-art lamp-art--base"
+              aria-hidden="true"
+            >
+              <span class="lamp-art__glow"></span>
+              <span class="lamp-art__shade"></span>
+              <span class="lamp-art__stem"></span>
+              <span class="lamp-art__base"></span>
+            </span>
+          </a>
+
+          <div class="product-card__body">
+            <p class="product-card__category">
+              Для чтения
+            </p>
+
+            <h3 class="product-card__title">
+              <a href="product.html?id=base">
+                Lumen Base
+              </a>
+            </h3>
+
+            <p class="product-card__description">
+              Компактная лампа с тёплым светом
+              для спокойных вечеров.
+            </p>
+
+            <dl class="product-card__specs">
+              <div>
+                <dt>Мощность</dt>
+                <dd>5 Вт</dd>
+              </div>
+
+              <div>
+                <dt>Температура</dt>
+                <dd>3000 К</dd>
+              </div>
+            </dl>
+
+            <p class="product-card__stock">В наличии</p>
+            <p class="product-card__price">1 000 ₽</p>
+
+            <a
+              class="button button--secondary"
+              href="product.html?id=base"
+            >
+              Подробнее
+            </a>
+
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-order="base"
+            >
+              Заказать
+            </button>
+          </div>
+        </article>
+
+        <!-- Flex -->
+        <article class="product-card product-card--featured">
+          <a
+            class="product-card__visual"
+            href="product.html?id=flex"
+            aria-label="Подробнее о Lumen Flex"
+          >
+            <span class="product-card__badge">
+              Выбор для учёбы
+            </span>
+
+            <span
+              class="lamp-art lamp-art--flex"
+              aria-hidden="true"
+            >
+              <span class="lamp-art__glow"></span>
+              <span class="lamp-art__shade"></span>
+              <span class="lamp-art__stem"></span>
+              <span class="lamp-art__base"></span>
+            </span>
+          </a>
+
+          <div class="product-card__body">
+            <p class="product-card__category">
+              Для работы
+            </p>
+
+            <h3 class="product-card__title">
+              <a href="product.html?id=flex">
+                Lumen Flex
+              </a>
+            </h3>
+
+            <p class="product-card__description">
+              Направленный свет и три уровня яркости
+              для рабочих задач.
+            </p>
+
+            <dl class="product-card__specs">
+              <div>
+                <dt>Мощность</dt>
+                <dd>8 Вт</dd>
+              </div>
+
+              <div>
+                <dt>Температура</dt>
+                <dd>4000 К</dd>
+              </div>
+            </dl>
+
+            <p class="product-card__stock">В наличии</p>
+            <p class="product-card__price">1 500 ₽</p>
+
+            <a
+              class="button button--secondary"
+              href="product.html?id=flex"
+            >
+              Подробнее
+            </a>
+
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-order="flex"
+            >
+              Заказать
+            </button>
+          </div>
+        </article>
+
+        <!-- Pro -->
+        <article class="product-card">
+          <a
+            class="product-card__visual"
+            href="product.html?id=pro"
+            aria-label="Подробнее о Lumen Pro"
+          >
+            <span class="product-card__badge">
+              Больше настроек
+            </span>
+
+            <span
+              class="lamp-art lamp-art--pro"
+              aria-hidden="true"
+            >
+              <span class="lamp-art__glow"></span>
+              <span class="lamp-art__shade"></span>
+              <span class="lamp-art__stem"></span>
+              <span class="lamp-art__base"></span>
+            </span>
+          </a>
+
+          <div class="product-card__body">
+            <p class="product-card__category">
+              Для любых задач
+            </p>
+
+            <h3 class="product-card__title">
+              <a href="product.html?id=pro">
+                Lumen Pro
+              </a>
+            </h3>
+
+            <p class="product-card__description">
+              Настройка яркости и температуры
+              под ваш режим дня.
+            </p>
+
+            <dl class="product-card__specs">
+              <div>
+                <dt>Мощность</dt>
+                <dd>12 Вт</dd>
+              </div>
+
+              <div>
+                <dt>Температура</dt>
+                <dd>3000–6000 К</dd>
+              </div>
+            </dl>
+
+            <p class="product-card__stock">В наличии</p>
+            <p class="product-card__price">2 000 ₽</p>
+
+            <a
+              class="button button--secondary"
+              href="product.html?id=pro"
+            >
+              Подробнее
+            </a>
+
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-order="pro"
+            >
+              Заказать
+            </button>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Таблица сравнения товаров -->
-    <section class="section comparison" id="comparison">
+    <!-- Сравнение -->
+    <section
+      class="section comparison"
+      id="comparison"
+      aria-labelledby="comparison-title"
+    >
+      <p class="eyebrow">Поможем определиться</p>
 
-      <h2 class="section__title">
-        Сравнение товаров
+      <h2 class="section__title" id="comparison-title">
+        Сравните главное
       </h2>
 
-      <p class="comparison__description">
-        Сравните характеристики товаров и выберите
-        наиболее подходящий вариант.
-      </p>
-
-      <div class="comparison__wrapper">
-
+      <div
+        class="comparison__wrapper"
+        tabindex="0"
+        role="region"
+        aria-label="Сравнение ламп, таблицу можно прокручивать"
+      >
         <table class="comparison__table">
-
-          <caption class="comparison__caption">
-            Сравнительная таблица товаров
+          <caption>
+            Характеристики настольных ламп LUMEN
           </caption>
 
           <thead>
             <tr>
               <th scope="col">Характеристика</th>
-              <th scope="col">Товар 1</th>
-              <th scope="col">Товар 2</th>
-              <th scope="col">Товар 3</th>
+              <th scope="col">Base</th>
+              <th scope="col">Flex</th>
+              <th scope="col">Pro</th>
             </tr>
           </thead>
 
           <tbody>
-
             <tr>
               <th scope="row">Цена</th>
-              <td>1000 руб.</td>
-              <td>1500 руб.</td>
-              <td>2000 руб.</td>
+              <td>1 000 ₽</td>
+              <td>1 500 ₽</td>
+              <td>2 000 ₽</td>
             </tr>
 
             <tr>
-              <th scope="row">Категория</th>
-              <td>Базовый</td>
-              <td>Стандартный</td>
-              <td>Премиум</td>
+              <th scope="row">Мощность</th>
+              <td>5 Вт</td>
+              <td>8 Вт</td>
+              <td>12 Вт</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Температура света</th>
+              <td>3000 К</td>
+              <td>4000 К</td>
+              <td>3000–6000 К</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Уровни яркости</th>
+              <td>1</td>
+              <td>3</td>
+              <td>5</td>
             </tr>
 
             <tr>
@@ -285,282 +479,271 @@
 
             <tr>
               <th scope="row">Доставка</th>
-              <td>Платная</td>
-              <td>Бесплатная</td>
-              <td>Бесплатная</td>
+              <td>300 ₽</td>
+              <td>Бесплатно</td>
+              <td>Бесплатно</td>
             </tr>
-
-            <tr>
-              <th scope="row">Поддержка</th>
-              <td>Базовая</td>
-              <td>Стандартная</td>
-              <td>Приоритетная</td>
-            </tr>
-
           </tbody>
-
         </table>
-
       </div>
-
     </section>
 
-    <!-- Дополнительная информация -->
-    <aside class="aside-info">
+    <!-- Отзывы -->
+    <section
+      class="section"
+      id="reviews"
+      aria-labelledby="reviews-title"
+    >
+      <p class="eyebrow">Опыт использования</p>
 
-      <h2 class="aside-info__title">
-        Информация для студентов
+      <h2 class="section__title" id="reviews-title">
+        Свет в повседневной жизни
       </h2>
 
-      <p class="aside-info__text">
-        На следующих практических занятиях этот проект
-        будет расширяться: появятся дополнительные страницы,
-        новые интерфейсные элементы, формы, модальные окна
-        и интерактивные компоненты.
+      <p class="section__description">
+        Примеры отзывов для демонстрации
+        интерфейса учебного магазина.
       </p>
 
-    </aside>
+      <div class="reviews-grid">
+        <article class="review-card">
+          <p
+            class="review-card__rating"
+            aria-label="Оценка: 5 из 5"
+          >
+            ★★★★★
+          </p>
 
+          <h3 class="review-card__title">
+            Удобно готовиться к занятиям
+          </h3>
+
+          <blockquote class="review-card__text">
+            «Взяла Flex на небольшой стол. На среднем режиме
+            комфортно читать конспекты, а основание
+            не занимает много места».
+          </blockquote>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">
+              А
+            </span>
+
+            <div>
+              <p>Анна К.</p>
+
+              <span>
+                Lumen Flex ·
+                <time datetime="2026-09-18">18.09.2026</time>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <p
+            class="review-card__rating"
+            aria-label="Оценка: 5 из 5"
+          >
+            ★★★★★
+          </p>
+
+          <h3 class="review-card__title">
+            Ничего лишнего
+          </h3>
+
+          <blockquote class="review-card__text">
+            «Base стоит у кресла для чтения.
+            Нравятся тёплый свет и простое управление:
+            включил и читаешь».
+          </blockquote>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">
+              М
+            </span>
+
+            <div>
+              <p>Михаил С.</p>
+
+              <span>
+                Lumen Base ·
+                <time datetime="2026-10-02">02.10.2026</time>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <p
+            class="review-card__rating"
+            aria-label="Оценка: 4 из 5"
+          >
+            ★★★★☆
+          </p>
+
+          <h3 class="review-card__title">
+            Одна лампа на весь день
+          </h3>
+
+          <blockquote class="review-card__text">
+            «У Pro меняю температуру: днём нейтральная,
+            вечером тёплая. Хотелось бы больше цветов
+            корпуса, но настройки удобные».
+          </blockquote>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">
+              Д
+            </span>
+
+            <div>
+              <p>Дарья М.</p>
+
+              <span>
+                Lumen Pro ·
+                <time datetime="2026-10-12">12.10.2026</time>
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      class="section faq"
+      id="faq"
+      aria-labelledby="faq-title"
+    >
+      <div>
+        <p class="eyebrow">Есть вопросы?</p>
+
+        <h2 class="section__title" id="faq-title">
+          Разберёмся<br>
+          со светом.
+        </h2>
+
+        <p class="section__description">
+          Ответы о моделях и работе учебного магазина.
+        </p>
+
+        <a href="contacts.html">
+          Перейти к контактам →
+        </a>
+      </div>
+
+      <div class="faq__list">
+        <details class="faq__item" open>
+          <summary class="faq__question">
+            Как выбрать лампу для учёбы?
+          </summary>
+
+          <div class="faq__answer">
+            <p>
+              Для рабочего стола подойдёт Flex
+              с нейтральным светом 4000 К и тремя
+              уровнями яркости. Если хотите менять
+              температуру света, выбирайте Pro.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            Чем отличаются модели?
+          </summary>
+
+          <div class="faq__answer">
+            <p>
+              Base — простая модель с тёплым светом.
+              Flex позволяет выбрать яркость.
+              Pro дополнительно регулирует температуру
+              от 3000 до 6000 К. Полное сравнение
+              есть в таблице выше.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            Нужно ли отдельно покупать лампочку?
+          </summary>
+
+          <div class="faq__answer">
+            <p>
+              Нет. Во всех трёх моделях предусмотрен
+              встроенный светодиодный модуль.
+              В комплект также входит сетевой адаптер.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            Как устроены доставка и гарантия?
+          </summary>
+
+          <div class="faq__answer">
+            <p>
+              В демонстрационном каталоге доставка Base
+              стоит 300 ₽, для Flex и Pro она бесплатная.
+              Гарантия: 6, 12 и 24 месяца соответственно.
+              Это условия вымышленного учебного магазина.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            Можно ли оформить настоящий заказ?
+          </summary>
+
+          <div class="faq__answer">
+            <p>
+              Сайт создан для учебного проекта.
+              Форма проверяет заполнение полей
+              и показывает результат, но данные
+              на сервер не отправляются
+              и оплата не принимается.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <aside class="aside-info">
+      <h2 class="aside-info__title">
+        Учебный проект
+      </h2>
+
+      <p>
+        Товары, характеристики и отзывы вымышлены.
+        Сайт демонстрирует HTML, CSS, JavaScript,
+        адаптивную вёрстку и методологию БЭМ.
+      </p>
+    </aside>
   </main>
 
-  <!-- Подвал сайта -->
   <footer class="site-footer" id="contacts">
-
     <div class="site-footer__inner">
+      <a class="site-header__logo" href="index.html">
+        LUMEN.
+      </a>
 
-      <p class="site-footer__copyright">
-        &copy; 2026 Учебный проект. Все права защищены.
-      </p>
+      <p>© 2026 · Учебный интернет-магазин</p>
 
-      <p class="site-footer__description">
-        Дисциплина: Фронтенд и бэкенд разработка
-      </p>
-
+      <a href="contacts.html">
+        Обратная связь →
+      </a>
     </div>
-
   </footer>
 
-  <!-- Улучшенное модальное окно -->
-  <dialog
-    class="order-dialog"
-    id="order-dialog"
-    aria-labelledby="order-dialog-title"
-  >
-
-    <h2 class="order-dialog__title" id="order-dialog-title">
-      Оформление заявки
-    </h2>
-
-    <form
-      class="order-form"
-      id="order-form"
-      action="#"
-      method="post"
-      novalidate
-    >
-
-      <!-- Выбранный товар -->
-      <input
-        id="selected-product"
-        name="selected-product"
-        type="hidden"
-      >
-
-      <!-- Имя -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-name">
-          Имя
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
-
-      </div>
-
-      <!-- Email -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-email">
-          E-mail
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-
-      </div>
-
-      <!-- Телефон -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-phone">
-          Телефон
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-
-        <small class="order-form__hint">
-          Формат: +7 (900) 000-00-00
-        </small>
-
-      </div>
-
-      <!-- Дата -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-date">
-          Дата связи
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-
-      </div>
-
-      <!-- Тема заявки -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-topic">
-          Тема заявки
-        </label>
-
-        <select
-          class="order-form__input"
-          id="order-topic"
-          name="topic"
-          required
-        >
-
-          <option value="">
-            Выберите тему
-          </option>
-
-          <option value="product">
-            Заказ товара
-          </option>
-
-          <option value="consultation">
-            Консультация
-          </option>
-
-          <option value="delivery">
-            Доставка
-          </option>
-
-        </select>
-
-      </div>
-
-      <!-- Комментарий -->
-      <div class="order-form__field">
-
-        <label class="order-form__label" for="order-comment">
-          Комментарий
-        </label>
-
-        <textarea
-          class="order-form__input"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-
-      </div>
-
-      <!-- Согласие -->
-      <div class="order-form__field">
-
-        <label class="order-form__agreement">
-
-          <input
-            class="order-form__checkbox"
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-
-          Я согласен на обработку данных
-
-        </label>
-
-      </div>
-
-      <!-- Кнопки модального окна -->
-      <div class="order-form__actions">
-
-        <button
-          class="button button--secondary"
-          type="button"
-          id="close-order-dialog"
-        >
-          Закрыть
-        </button>
-
-        <button
-          class="button button--primary"
-          type="submit"
-        >
-          Отправить заявку
-        </button>
-
-      </div>
-
-    </form>
-
-  </dialog>
-
-  <!-- Сообщение об успешной отправке -->
-  <p
-    class="success-message"
-    id="success-message"
-    role="status"
-    aria-live="polite"
-    hidden
-  >
-    Форма успешно отправлена!
-  </p>
-
-  <!-- Фиксированная кнопка Наверх -->
-  <button
-    class="back-to-top"
-    id="back-to-top"
-    type="button"
-    aria-label="Вернуться наверх страницы"
-    title="Наверх"
-    hidden
-  >
-    ↑
-  </button>
-
+  <noscript>
+    <p class="noscript-message">
+      Для формы заявки и подробной страницы товара
+      включите JavaScript.
+    </p>
+  </noscript>
 </body>
 </html>

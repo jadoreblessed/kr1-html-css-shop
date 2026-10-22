@@ -1,41 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Каталог товаров учебного интернет-магазина."
+    content="Каталог LUMEN: настольные лампы Base, Flex и Pro. Фильтрация по модели и цене."
   >
 
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <title>Каталог настольных ламп — LUMEN</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">
+    Перейти к содержимому
+  </a>
 
-  <!-- Шапка сайта -->
   <header class="site-header">
     <div class="site-header__inner">
-
-      <a class="site-header__logo" href="index.html">
-        ShopProject
+      <a
+        class="site-header__logo"
+        href="index.html"
+        aria-label="LUMEN — главная"
+      >
+        LUMEN<span class="site-header__dot">.</span>
       </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-
-          <li class="site-nav__item">
+          <li>
             <a class="site-nav__link" href="index.html">
               Главная
             </a>
           </li>
 
-          <li class="site-nav__item">
+          <li>
             <a
               class="site-nav__link site-nav__link--active"
               href="catalog.html"
@@ -45,126 +48,105 @@
             </a>
           </li>
 
-          <li class="site-nav__item">
+          <li>
+            <a class="site-nav__link" href="index.html#reviews">
+              Отзывы
+            </a>
+          </li>
+
+          <li>
+            <a class="site-nav__link" href="index.html#faq">
+              FAQ
+            </a>
+          </li>
+
+          <li>
             <a class="site-nav__link" href="contacts.html">
               Контакты
             </a>
           </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">
-              Преимущества
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">
-              Обратная связь
-            </a>
-          </li>
-
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <main class="site-main">
-
-    <!-- Хлебные крошки -->
+  <main class="site-main" id="main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-
-      <a class="breadcrumbs__link" href="index.html">
-        Главная
-      </a>
-
-      <span class="breadcrumbs__current" aria-current="page">
-        Каталог
-      </span>
-
+      <a href="index.html">Главная</a>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">Каталог</span>
     </nav>
 
-    <!-- Описание каталога -->
     <section class="section">
+      <p class="eyebrow">Свет под вашу задачу</p>
 
       <h1 class="section__title">
-        Каталог товаров
+        Каталог настольных ламп
       </h1>
 
       <p class="section__description">
-        На этой странице представлен учебный каталог товаров.
-        Здесь можно просматривать товары и использовать фильтры.
+        Выберите модель, сравните характеристики
+        и откройте подробное описание.
       </p>
-
     </section>
 
-    <!-- Каталог товаров -->
-    <section class="catalog-layout" aria-label="Каталог товаров">
-
-      <!-- Фильтры -->
-      <aside class="catalog-filters">
-
-        <h2 class="catalog-filters__title">
+    <section
+      class="catalog-layout"
+      aria-label="Каталог товаров с фильтрами"
+    >
+      <!-- Sticky-фильтр -->
+      <aside
+        class="catalog-filters"
+        aria-labelledby="filters-title"
+      >
+        <h2 class="catalog-filters__title" id="filters-title">
           Фильтры
         </h2>
 
-        <form
-          class="filters-form"
-          action="#"
-          method="get"
-        >
-
-          <!-- Фильтр категорий -->
+        <form class="filters-form" id="filters-form">
           <fieldset class="filters-form__group">
-
-            <legend class="filters-form__legend">
-              Категория
-            </legend>
+            <legend>Назначение</legend>
 
             <label class="filters-form__label">
               <input
-                class="filters-form__checkbox"
-                type="checkbox"
+                type="radio"
                 name="category"
                 value="all"
+                checked
               >
-              Все товары
+              Все модели
             </label>
 
             <label class="filters-form__label">
               <input
-                class="filters-form__checkbox"
-                type="checkbox"
+                type="radio"
                 name="category"
-                value="popular"
+                value="reading"
               >
-              Популярные
+              Для чтения
             </label>
 
             <label class="filters-form__label">
               <input
-                class="filters-form__checkbox"
-                type="checkbox"
+                type="radio"
                 name="category"
-                value="new"
+                value="work"
               >
-              Новинки
+              Для работы
             </label>
 
+            <label class="filters-form__label">
+              <input
+                type="radio"
+                name="category"
+                value="universal"
+              >
+              Универсальные
+            </label>
           </fieldset>
 
-          <!-- Фильтр цены -->
           <fieldset class="filters-form__group">
-
-            <legend class="filters-form__legend">
-              Цена
-            </legend>
+            <legend>Цена, ₽</legend>
 
             <label class="filters-form__label" for="price-from">
               От
@@ -176,6 +158,7 @@
               name="price-from"
               type="number"
               min="0"
+              step="1"
               placeholder="0"
             >
 
@@ -189,126 +172,308 @@
               name="price-to"
               type="number"
               min="0"
-              placeholder="5000"
+              step="1"
+              placeholder="2000"
             >
-
           </fieldset>
 
-          <button
-            class="button button--primary"
-            type="submit"
-          >
+          <button class="button button--primary" type="submit">
             Применить
           </button>
 
+          <button class="button button--secondary" type="reset">
+            Сбросить
+          </button>
         </form>
-
       </aside>
 
-      <!-- Список товаров -->
-      <section class="catalog-products">
-
-        <h2 class="catalog-products__title">
-          Список товаров
+      <!-- Товары -->
+      <section
+        class="catalog-products"
+        aria-labelledby="products-title"
+      >
+        <h2 class="catalog-products__title" id="products-title">
+          Все модели
         </h2>
 
-        <div class="products-grid">
+        <p
+          class="catalog-products__count"
+          id="products-count"
+          role="status"
+        >
+          Найдено товаров: 3
+        </p>
 
-          <!-- Товар 1 -->
-          <article class="product-card">
-
-            <h3 class="product-card__title">
-              Товар 1
-            </h3>
-
-            <p class="product-card__description">
-              Краткое описание учебного товара.
-            </p>
-
-            <p class="product-card__price">
-              Цена: 1000 руб.
-            </p>
-
+        <div class="products-grid products-grid--catalog">
+          <!-- Base -->
+          <article
+            class="product-card"
+            data-category="reading"
+            data-price="1000"
+          >
             <a
-              class="button button--primary product-card__button"
-              href="index.html#popular"
+              class="product-card__visual"
+              href="product.html?id=base"
+              aria-label="Подробнее о Lumen Base"
             >
-              Подробнее
+              <span class="product-card__badge">
+                Минимализм
+              </span>
+
+              <span
+                class="lamp-art lamp-art--base"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
             </a>
 
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для чтения
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=base">
+                  Lumen Base
+                </a>
+              </h3>
+
+              <p class="product-card__description">
+                Компактная лампа с тёплым светом
+                для спокойных вечеров.
+              </p>
+
+              <dl class="product-card__specs">
+                <div>
+                  <dt>Мощность</dt>
+                  <dd>5 Вт</dd>
+                </div>
+
+                <div>
+                  <dt>Температура</dt>
+                  <dd>3000 К</dd>
+                </div>
+
+                <div>
+                  <dt>Гарантия</dt>
+                  <dd>6 месяцев</dd>
+                </div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">1 000 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=base"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="base"
+              >
+                Заказать
+              </button>
+            </div>
           </article>
 
-          <!-- Товар 2 со скидкой -->
-          <article class="product-card product-card--discount">
-
-            <h3 class="product-card__title">
-              Товар 2
-            </h3>
-
-            <p class="product-card__description">
-              Краткое описание учебного товара.
-            </p>
-
-            <p class="product-card__price">
-              Цена: 1500 руб.
-            </p>
-
+          <!-- Flex -->
+          <article
+            class="product-card product-card--featured"
+            data-category="work"
+            data-price="1500"
+          >
             <a
-              class="button button--primary product-card__button"
-              href="index.html#popular"
+              class="product-card__visual"
+              href="product.html?id=flex"
+              aria-label="Подробнее о Lumen Flex"
             >
-              Подробнее
+              <span class="product-card__badge">
+                Выбор для учёбы
+              </span>
+
+              <span
+                class="lamp-art lamp-art--flex"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
             </a>
 
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для работы
+              </p>
+
+              <h3 class="product-card__title">
+                <a href="product.html?id=flex">
+                  Lumen Flex
+                </a>
+              </h3>
+
+              <p class="product-card__description">
+                Направленный свет и три уровня яркости
+                для рабочих задач.
+              </p>
+
+              <dl class="product-card__specs">
+                <div>
+                  <dt>Мощность</dt>
+                  <dd>8 Вт</dd>
+                </div>
+
+                <div>
+                  <dt>Температура</dt>
+                  <dd>4000 К</dd>
+                </div>
+
+                <div>
+                  <dt>Гарантия</dt>
+                  <dd>12 месяцев</dd>
+                </div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">1 500 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=flex"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="flex"
+              >
+                Заказать
+              </button>
+            </div>
           </article>
 
-          <!-- Товар 3 -->
-          <article class="product-card">
-
-            <h3 class="product-card__title">
-              Товар 3
-            </h3>
-
-            <p class="product-card__description">
-              Краткое описание учебного товара.
-            </p>
-
-            <p class="product-card__price">
-              Цена: 2000 руб.
-            </p>
-
+          <!-- Pro -->
+          <article
+            class="product-card"
+            data-category="universal"
+            data-price="2000"
+          >
             <a
-              class="button button--primary product-card__button"
-              href="index.html#popular"
+              class="product-card__visual"
+              href="product.html?id=pro"
+              aria-label="Подробнее о Lumen Pro"
             >
-              Подробнее
+              <span class="product-card__badge">
+                Больше настроек
+              </span>
+
+              <span
+                class="lamp-art lamp-art--pro"
+                aria-hidden="true"
+              >
+                <span class="lamp-art__glow"></span>
+                <span class="lamp-art__shade"></span>
+                <span class="lamp-art__stem"></span>
+                <span class="lamp-art__base"></span>
+              </span>
             </a>
 
-          </article>
+            <div class="product-card__body">
+              <p class="product-card__category">
+                Для любых задач
+              </p>
 
+              <h3 class="product-card__title">
+                <a href="product.html?id=pro">
+                  Lumen Pro
+                </a>
+              </h3>
+
+              <p class="product-card__description">
+                Настройка яркости и температуры
+                под ваш режим дня.
+              </p>
+
+              <dl class="product-card__specs">
+                <div>
+                  <dt>Мощность</dt>
+                  <dd>12 Вт</dd>
+                </div>
+
+                <div>
+                  <dt>Температура</dt>
+                  <dd>3000–6000 К</dd>
+                </div>
+
+                <div>
+                  <dt>Гарантия</dt>
+                  <dd>24 месяца</dd>
+                </div>
+              </dl>
+
+              <p class="product-card__stock">В наличии</p>
+              <p class="product-card__price">2 000 ₽</p>
+
+              <a
+                class="button button--secondary"
+                href="product.html?id=pro"
+              >
+                Подробнее
+              </a>
+
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-order="pro"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
         </div>
+
+        <p
+          class="catalog-products__empty"
+          id="products-empty"
+          hidden
+        >
+          Товары не найдены. Измените условия
+          или сбросьте фильтры.
+        </p>
       </section>
-
     </section>
-
   </main>
 
-  <!-- Подвал сайта -->
   <footer class="site-footer">
-
     <div class="site-footer__inner">
+      <a class="site-header__logo" href="index.html">
+        LUMEN.
+      </a>
 
-      <p class="site-footer__copyright">
-        &copy; 2026 Учебный проект. Все права защищены.
-      </p>
+      <p>© 2026 · Учебный интернет-магазин</p>
 
-      <p class="site-footer__description">
-        Дисциплина: Фронтенд и бэкенд разработка
-      </p>
-
+      <a href="contacts.html">
+        Обратная связь →
+      </a>
     </div>
-
   </footer>
 
+  <noscript>
+    <p class="noscript-message">
+      Для фильтрации, формы заявки и подробной страницы
+      товара включите JavaScript.
+    </p>
+  </noscript>
 </body>
 </html>
