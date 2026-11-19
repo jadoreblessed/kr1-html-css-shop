@@ -30,7 +30,7 @@
   .hero { min-height: clamp(450px, 44vw, 586px); }
   .hero-picture, .hero-copy { grid-area: 1 / 1; }
   .hero-picture img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-position: center 62%; }
-  .hero-picture::after { background: linear-gradient(90deg, #141810 0%, #141810d9 28%, #14181055 51%, transparent 74%); }
+  .hero-picture::after { background: linear-gradient(90deg, #141e16 0%, #141e16d9 28%, #141e1655 51%, transparent 74%); }
   .hero-copy { z-index: 1; align-self: center; justify-self: start; padding: 48px clamp(40px, 5.5vw, 82px); }
   .hero h1 { font-size: clamp(3.6rem, 7.3vw, 6.1rem); }
   .product-detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 5vw, 72px); }

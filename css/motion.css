@@ -12,7 +12,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .product-card:hover {
-    border-color: #987751;
+    border-color: var(--accent-border);
     box-shadow: 0 17px 40px #0005;
   }
 }
@@ -50,6 +50,6 @@
     .product-card:hover { transform: translateY(-4px); }
     .product-card .product-picture img { transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
     .product-card:hover .product-picture img { transform: scale(1.045); }
-    .hero .button:hover { box-shadow: 0 0 30px #ddaa624d; }
+    .hero .button:hover { box-shadow: 0 0 30px #85b59244; }
   }
 }
