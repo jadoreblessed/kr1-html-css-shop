@@ -1,0 +1,55 @@
+@keyframes lift-in {
+  from { opacity: .6; transform: translateY(16px); }
+}
+
+@keyframes hero-settle {
+  from { transform: scale(1.045); }
+}
+
+@keyframes dialog-open {
+  from { opacity: .62; transform: translateY(9px) scale(.99); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    border-color: #987751;
+    box-shadow: 0 17px 40px #0005;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy,
+  .page-heading,
+  .product-detail-copy {
+    animation: lift-in .64s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .hero-picture img { animation: hero-settle 1.15s cubic-bezier(.22, 1, .36, 1); }
+
+  [data-reveal].is-in-view:not(:focus-within) {
+    animation: lift-in .65s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .order-dialog[open] { animation: dialog-open .26s cubic-bezier(.22, 1, .36, 1); }
+  .form-notice--toast { animation: lift-in .26s ease-out; }
+
+  .button,
+  .header-order {
+    transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s;
+  }
+
+  .button:active { transform: translateY(1px); }
+  .site-nav a { transition: color .2s; }
+  .site-nav a::after { transition: transform .24s ease-out; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .product-card {
+      transition: transform .26s ease, border-color .26s, box-shadow .26s;
+    }
+
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card .product-picture img { transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+    .product-card:hover .product-picture img { transform: scale(1.045); }
+    .hero .button:hover { box-shadow: 0 0 30px #ddaa624d; }
+  }
+}

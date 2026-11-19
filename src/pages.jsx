@@ -16,23 +16,23 @@ export function HomePage({ onOrder }) {
       <section className="hero">
         <HeroImage />
         <div className="hero-copy">
-          <h1>Свет для<br />ваших идей.</h1>
-          <p>Настольные лампы для работы, учёбы и чтения. Выберите свет, с которым вам удобно.</p>
+          <h1>Свет для<br /><em>ваших идей.</em></h1>
+          <p>Настольные лампы для работы, учёбы и чтения. Подберите свет под свой ритм.</p>
           <div className="hero-actions">
-            <a className="button button-light" href="./catalog.html">Смотреть каталог <span aria-hidden="true">→</span></a>
+            <a className="button" href="./catalog.html">Смотреть каталог <span aria-hidden="true">→</span></a>
             <a className="hero-link" href="#comparison">Сравнить модели <span aria-hidden="true">↓</span></a>
           </div>
         </div>
       </section>
 
-      <section className="section" id="popular">
+      <section className="section" id="popular" data-reveal>
         <SectionHeader title="Популярные модели" action={<a className="text-link" href="./catalog.html">Весь каталог <span aria-hidden="true">→</span></a>} />
         <div className="product-grid">
           {featuredProducts.map((id) => <ProductCard key={id} id={id} product={products[id]} onOrder={onOrder} />)}
         </div>
       </section>
 
-      <section className="section benefits-section">
+      <section className="section benefits-section" data-reveal>
         <SectionHeader title="Почему LUMEN" />
         <ul className="benefits">
           {benefits.map(([symbol, title, description]) => (
@@ -45,13 +45,13 @@ export function HomePage({ onOrder }) {
         </ul>
       </section>
 
-      <section className="section" id="comparison">
+      <section className="section" id="comparison" data-reveal>
         <SectionHeader title="Сравните модели" description="Мощность, температура света, яркость и другие параметры в одной таблице." />
         <p className="table-hint">Прокрутите таблицу вбок, чтобы увидеть все модели.</p>
         <ComparisonTable products={featuredProducts.map((id) => products[id])} />
       </section>
 
-      <section className="section" id="reviews">
+      <section className="section" id="reviews" data-reveal>
         <SectionHeader title="Отзывы о моделях" description="Демонстрационные отзывы." />
         <div className="review-grid">
           {reviews.map((review) => (
@@ -68,7 +68,7 @@ export function HomePage({ onOrder }) {
         </div>
       </section>
 
-      <section className="section faq" id="faq">
+      <section className="section faq" id="faq" data-reveal>
         <div>
           <h2>Вопросы о лампах</h2>
           <a className="text-link" href="./contacts.html">Связаться с нами <span aria-hidden="true">→</span></a>
@@ -208,7 +208,7 @@ export function ProductPage({ onOrder }) {
           </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section" data-reveal>
         <SectionHeader title="Характеристики" />
         <table className="spec-table detail-table">
           <caption className="sr-only">Характеристики {product.name}</caption>
@@ -216,7 +216,7 @@ export function ProductPage({ onOrder }) {
           <tbody>{specs.map(([label, value]) => <tr key={label}><th scope="row">{label}</th><td>{value}</td></tr>)}</tbody>
         </table>
       </section>
-      <section className="section supplementary">
+      <section className="section supplementary" data-reveal>
         <div><h2>Комплектация</h2><p>Настольная лампа, сетевой адаптер, инструкция и гарантийный талон.</p></div>
         <div><h2>Уход</h2><p>Ставьте лампу на ровную поверхность. Перед очисткой отключите питание и протрите корпус мягкой сухой тканью.</p></div>
       </section>
@@ -237,9 +237,9 @@ export function ContactsPage({ onOrder }) {
         <div><h2>Почта</h2><a href="mailto:info@example.com">info@example.com</a></div>
         <div><h2>Город</h2><p>Москва · онлайн-каталог</p></div>
       </address>
-      <section className="section contact-panel" id="feedback">
+      <section className="section contact-panel" id="feedback" data-reveal>
         <div><h2>Нужна консультация?</h2><p>Укажите, какая модель вас интересует.</p></div>
-        <button className="button button-light" type="button" onClick={() => onOrder(null)}>Открыть форму <span aria-hidden="true">→</span></button>
+        <button className="button" type="button" onClick={() => onOrder(null)}>Открыть форму <span aria-hidden="true">→</span></button>
       </section>
     </>
   );

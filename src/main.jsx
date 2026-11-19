@@ -4,6 +4,7 @@ import { CatalogPage, ContactsPage, HomePage, ProductPage } from './pages.jsx';
 import { OrderDialog, OrderPage } from './order.jsx';
 import '../css/style.css';
 import '../css/responsive.css';
+import '../css/motion.css';
 import './product-demo.js';
 
 const pages = { home: HomePage, catalog: CatalogPage, product: ProductPage, order: OrderPage, contacts: ContactsPage };
@@ -25,7 +26,7 @@ function Brand() {
 
 function Header() {
   return (
-    <header className="site-header" id="top">
+    <header className="site-header">
       <div className="shell header-inner">
         <Brand />
         <nav className="site-nav" aria-label="Основное меню">
@@ -46,7 +47,7 @@ function Footer() {
         <Brand />
         <p>© 2026 LUMEN · Настольные лампы</p>
         <a href="./contacts.html">Контакты</a>
-        <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+        <a href="#root">Наверх <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
   );
@@ -59,6 +60,25 @@ function App() {
   useLayoutEffect(() => {
     const anchor = window.location.hash.slice(1);
     if (anchor) document.getElementById(anchor)?.scrollIntoView();
+  }, []);
+
+  useEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motion.matches || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-in-view');
+        observer.unobserve(entry.target);
+      }
+    }, { rootMargin: '0px 0px 48px 0px', threshold: .08 });
+
+    for (const section of document.querySelectorAll('[data-reveal]')) {
+      if (section.getBoundingClientRect().top >= window.innerHeight) observer.observe(section);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
