@@ -20,6 +20,7 @@ function validateInput(event) {
 }
 
 function OrderForm({ product, onSuccess, onCancel }) {
+  const phoneId = useId();
   const phoneHintId = useId();
 
   function submit(event) {
@@ -33,11 +34,11 @@ function OrderForm({ product, onSuccess, onCancel }) {
       {product && <p className="form-wide selected-product">{product.name} · {formatPrice(product.price)}</p>}
       <label>Имя *<input name="name" autoComplete="name" required minLength={2} /></label>
       <label>Email *<input type="email" name="email" autoComplete="email" required /></label>
-      <label>
-        Телефон *
-        <input type="tel" name="phone" autoComplete="tel" placeholder="+7 (900) 000-00-00" aria-describedby={phoneHintId} required />
+      <div className="form-field">
+        <label htmlFor={phoneId}>Телефон *</label>
+        <input id={phoneId} type="tel" name="phone" autoComplete="tel" placeholder="+7 (900) 000-00-00" aria-describedby={phoneHintId} required />
         <small id={phoneHintId}>11 цифр, начиная с +7 или 8.</small>
-      </label>
+      </div>
       <label>Дата связи<input type="date" name="date" min={localDate()} /></label>
       <label>
         Тема заявки *

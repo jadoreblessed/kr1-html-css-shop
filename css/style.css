@@ -97,7 +97,8 @@ main:focus { outline-offset: -4px; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: clamp(9px, 3vw, 25px);
+  justify-content: space-between;
+  column-gap: 5px;
 }
 .site-nav a, .header-order {
   display: inline-flex;
@@ -109,6 +110,7 @@ main:focus { outline-offset: -4px; }
   font-weight: 650;
   text-decoration: none;
 }
+.site-nav a { font-size: clamp(.74rem, 3.5vw, .84rem); }
 .site-nav a:hover, .site-nav a[aria-current], .header-order:hover, .header-order[aria-current] { text-decoration: underline; }
 .site-nav a[aria-current], .header-order[aria-current] { text-decoration-thickness: 2px; }
 .header-order { justify-self: end; padding-inline: 14px; border: 1px solid var(--control-line); border-radius: 999px; }
@@ -203,6 +205,7 @@ main:focus { outline-offset: -4px; }
 .faq summary { min-height: 44px; padding-block: 10px; font-weight: 650; cursor: pointer; }
 .faq details p { margin: 0 0 13px 16px; color: var(--muted); }
 
+.table-hint { margin-bottom: 9px; color: var(--muted); font-size: .85rem; }
 .table-scroll { width: 100%; min-width: 0; overflow-x: auto; }
 .spec-table { width: 100%; border-collapse: collapse; background: var(--surface); text-align: left; }
 .compare-table { min-width: 570px; }
@@ -218,7 +221,7 @@ main:focus { outline-offset: -4px; }
 .filters fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
 .filters legend { padding: 0; margin-bottom: 4px; font-weight: 650; }
 .filter-prices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.filter-prices label, .order-form > label { display: grid; min-width: 0; gap: 5px; align-content: start; }
+.filter-prices label, .order-form > label, .form-field { display: grid; min-width: 0; gap: 5px; align-content: start; }
 .filter-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .count { margin-block: 5px 14px; color: var(--muted); font-size: .9rem; }
 .empty { padding: 20px; border-radius: 12px; background: var(--sage); }

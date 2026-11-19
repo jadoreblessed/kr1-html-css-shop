@@ -19,7 +19,7 @@ const navigation = [
 ];
 
 function Brand() {
-  return <a className="brand" href="./index.html"><span className="brand-mark" aria-hidden="true">✳</span> LUMEN</a>;
+  return <a className="brand" href="./index.html"><span className="brand-mark" aria-hidden="true">✦</span> LUMEN</a>;
 }
 
 function Header() {
@@ -32,7 +32,7 @@ function Header() {
             <a key={key} href={url} aria-current={key === currentPage ? 'page' : undefined}>{label}</a>
           ))}
         </nav>
-        <a className="header-order" href="./order.html" aria-current={currentPage === 'order' ? 'page' : undefined}>Заявка <span aria-hidden="true">↗</span></a>
+        <a className="header-order" href="./order.html" aria-current={currentPage === 'order' ? 'page' : undefined}>Заявка <span aria-hidden="true">→</span></a>
       </div>
     </header>
   );

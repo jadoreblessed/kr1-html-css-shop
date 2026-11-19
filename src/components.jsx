@@ -1,7 +1,19 @@
 import React from 'react';
 import { formatPrice } from './products.js';
 
-export const heroAlt = 'Графитовая настольная лампа с тонкой световой панелью освещает поверхность стола';
+const heroAlt = 'Графитовая лампа с наклонной стойкой освещает деревянную столешницу';
+
+const productAlts = {
+  base: 'Песочная лампа с коническим плафоном и круглым основанием',
+  flex: 'Шалфейная лампа с шарнирной стойкой и коническим плафоном',
+  pro: 'Графитовая лампа с тонкой горизонтальной световой панелью на вертикальной стойке',
+  mini: 'Терракотовая лампа с низкой стойкой и плафоном-полусферой',
+  arc: 'Тёмно-синяя лампа с изогнутой стойкой и направленным вниз плафоном',
+  studio: 'Бордовая лампа с двойной шарнирной стойкой и округлым плафоном',
+  soft: 'Сиреневая лампа с широким купольным плафоном на прямой стойке',
+  air: 'Серо-зелёная лампа с тонкой световой панелью и изогнутой стойкой',
+  max: 'Тёмно-коричневая лампа с широкой горизонтальной панелью на центральной стойке',
+};
 
 const cardSizes = '(min-width: 1264px) 385px, (min-width: 1200px) calc((100vw - 108px) / 3), (min-width: 1024px) calc((100vw - 96px) / 3), (min-width: 700px) calc((100vw - 80px) / 2), (min-width: 600px) calc((100vw - 48px) / 2), calc(100vw - 32px)';
 const catalogSizes = '(min-width: 1264px) 298px, (min-width: 1200px) calc((100vw - 364px) / 3), (min-width: 1024px) calc((100vw - 328px) / 3), (min-width: 700px) calc((100vw - 80px) / 2), (min-width: 600px) calc((100vw - 48px) / 2), calc(100vw - 32px)';
@@ -19,12 +31,12 @@ export function HeroImage() {
   );
 }
 
-export function ProductImage({ id, product, detail = false, catalog = false }) {
+export function ProductImage({ id, detail = false, catalog = false }) {
   const sizes = detail ? detailSizes : catalog ? catalogSizes : cardSizes;
   return (
     <picture className="product-picture">
       <source type="image/webp" srcSet={`${imageRoot}${id}-240.webp 240w, ${imageRoot}${id}-320.webp 320w, ${imageRoot}${id}-412.webp 412w`} sizes={sizes} />
-      <img src={`${imageRoot}${id}-412.jpg`} width="412" height="412" alt={`Настольная лампа ${product.name}, цвет корпуса — ${product.color.toLowerCase()}`}
+      <img src={`${imageRoot}${id}-412.jpg`} width="412" height="412" alt={productAlts[id]}
         loading={detail ? 'eager' : 'lazy'} decoding="async" />
     </picture>
   );
@@ -57,7 +69,7 @@ export function SectionHeader({ title, description, action }) {
 export function ProductCard({ id, product, onOrder, catalog }) {
   return (
     <article className="product-card">
-      <ProductImage id={id} product={product} catalog={catalog} />
+      <ProductImage id={id} catalog={catalog} />
       <div className="product-card-body">
         <p className="product-category">{product.category}</p>
         <h3><a href={`./product.html?id=${id}`}>{product.name}</a></h3>

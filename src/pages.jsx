@@ -18,14 +18,14 @@ export function HomePage({ onOrder }) {
           <h1>Свет для<br />ваших идей.</h1>
           <p>Настольные лампы для работы, учёбы и чтения. Выберите свет, с которым вам удобно.</p>
           <div className="hero-actions">
-            <a className="button button-light" href="./catalog.html">Смотреть каталог <span aria-hidden="true">↗</span></a>
+            <a className="button button-light" href="./catalog.html">Смотреть каталог <span aria-hidden="true">→</span></a>
             <a className="hero-link" href="#comparison">Сравнить модели <span aria-hidden="true">↓</span></a>
           </div>
         </div>
       </section>
 
       <section className="section" id="popular">
-        <SectionHeader title="Популярные модели" action={<a className="text-link" href="./catalog.html">Весь каталог <span aria-hidden="true">↗</span></a>} />
+        <SectionHeader title="Популярные модели" action={<a className="text-link" href="./catalog.html">Весь каталог <span aria-hidden="true">→</span></a>} />
         <div className="product-grid">
           {featuredProducts.map((id) => <ProductCard key={id} id={id} product={products[id]} onOrder={onOrder} />)}
         </div>
@@ -46,6 +46,7 @@ export function HomePage({ onOrder }) {
 
       <section className="section" id="comparison">
         <SectionHeader title="Сравните модели" description="Мощность, температура света, яркость и другие параметры в одной таблице." />
+        <p className="table-hint">Прокрутите таблицу вбок, чтобы увидеть все модели.</p>
         <ComparisonTable products={featuredProducts.map((id) => products[id])} />
       </section>
 
@@ -69,7 +70,7 @@ export function HomePage({ onOrder }) {
       <section className="section faq" id="faq">
         <div>
           <h2>Вопросы о лампах</h2>
-          <a className="text-link" href="./contacts.html">Связаться с нами <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="./contacts.html">Связаться с нами <span aria-hidden="true">→</span></a>
         </div>
         <div>
           {questions.map(({ question, answer }, index) => (
@@ -190,7 +191,7 @@ export function ProductPage({ onOrder }) {
     <>
       <Breadcrumbs current={product.name} catalog />
       <section className="product-detail">
-        <ProductImage id={id} product={product} detail />
+        <ProductImage id={id} detail />
         <div className="product-detail-copy">
           <p className="product-category">{product.category} · {product.sku}</p>
           <h1>{product.name}</h1>
@@ -202,7 +203,7 @@ export function ProductPage({ onOrder }) {
           </ul>
           <div className="detail-actions">
             <button className="button" type="button" onClick={() => onOrder(product)}>Оставить заявку</button>
-            <a className="text-link" href="./index.html#comparison">Сравнить модели <span aria-hidden="true">↗</span></a>
+            <a className="text-link" href="./index.html#comparison">Сравнить модели <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -237,7 +238,7 @@ export function ContactsPage({ onOrder }) {
       </address>
       <section className="section contact-panel" id="feedback">
         <div><h2>Нужна консультация?</h2><p>Укажите, какая модель вас интересует.</p></div>
-        <button className="button button-light" type="button" onClick={() => onOrder(null)}>Открыть форму <span aria-hidden="true">↗</span></button>
+        <button className="button button-light" type="button" onClick={() => onOrder(null)}>Открыть форму <span aria-hidden="true">→</span></button>
       </section>
     </>
   );

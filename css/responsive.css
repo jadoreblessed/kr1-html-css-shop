@@ -7,10 +7,14 @@
   .filter-actions { grid-column: 1 / -1; }
 }
 
+@media (min-width: 604px) {
+  .table-hint { display: none; }
+}
+
 @media (min-width: 700px) {
   .shell { width: min(1200px, calc(100% - 64px)); }
   .header-inner { grid-template-columns: auto 1fr auto; min-height: 72px; padding-block: 12px; }
-  .site-nav { grid-column: 2; grid-row: 1; justify-content: center; }
+  .site-nav { grid-column: 2; grid-row: 1; justify-content: center; column-gap: clamp(10px, 1.8vw, 25px); }
   .site-nav a, .header-order { font-size: .92rem; }
   .hero { margin-top: 24px; }
   .hero-copy { padding-inline: 36px; }
