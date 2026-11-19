@@ -1,9 +1,10 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { CatalogPage, ContactsPage, HomePage, ProductPage } from './pages.jsx';
 import { OrderDialog, OrderPage } from './order.jsx';
 import '../css/style.css';
 import '../css/responsive.css';
+import './product-demo.js';
 
 const pages = { home: HomePage, catalog: CatalogPage, product: ProductPage, order: OrderPage, contacts: ContactsPage };
 const pageName = window.location.pathname.split('/').pop().replace(/\.html$/, '');
@@ -59,6 +60,12 @@ function App() {
     const anchor = window.location.hash.slice(1);
     if (anchor) document.getElementById(anchor)?.scrollIntoView();
   }, []);
+
+  useEffect(() => {
+    if (!message) return;
+    const timer = window.setTimeout(() => setMessage(''), 8000);
+    return () => window.clearTimeout(timer);
+  }, [message]);
 
   function openOrder(product) {
     setMessage('');

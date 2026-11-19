@@ -1,6 +1,7 @@
 import React, { useId, useLayoutEffect, useRef, useState } from 'react';
 import { Breadcrumbs } from './components.jsx';
-import { formatPrice, getProduct } from './products.js';
+import { getProduct } from './products.js';
+import { formatPrice } from './product-utils.js';
 
 function localDate() {
   const now = new Date();

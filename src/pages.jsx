@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { Breadcrumbs, ComparisonTable, HeroImage, ProductCard, ProductImage, SectionHeader } from './components.jsx';
-import { categories, featuredProducts, formatPrice, getProduct, products } from './products.js';
+import { categories, featuredProducts, getProduct, products } from './products.js';
+import { formatPrice } from './product-utils.js';
 import { questions, reviews } from './home-content.js';
 
 const benefits = [

@@ -193,10 +193,6 @@ export const products = {
   }
 };
 
-export const formatPrice = (value) => {
-  return new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
-};
-
 export const getProduct = (id) => {
   return Object.hasOwn(products, id) ? products[id] : null;
 };

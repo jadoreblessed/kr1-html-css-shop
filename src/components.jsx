@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatPrice } from './products.js';
+import { formatPrice } from './product-utils.js';
 
 const heroAlt = 'Графитовая лампа с наклонной стойкой освещает деревянную столешницу';
 
